@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Daily Report on 2018-12-25</title>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .weibo_head {
+            width: 100%;
+            padding: 1.5em 1em .5em 1em;
+        }
+
+        .weibo_head_right {
+            position: absolute;
+            right: 2em;
+            top: 2em;
+        }
+
+        .weibo_header p {
+            line-height: .6em;
+        }
+
+        .weibo_content {
+            width: 100%;
+            margin-top: 1em;
+        }
+
+        .weibo_content li {
+            margin-bottom: .5em;
+            padding-left: 1em;
+            width: 100%;
+        }
+
+        .weibo_content li dl dt {
+            list-style: none;
+            display: inline-block;
+            padding: 0 12px 0 12px;
+        }
+
+        .weibo_content li .percon {
+            margin-right: 4em;
+            background: #eee;
+            width: auto;
+
+            /*text-indent:15px;*/
+        }
+
+        .weibo_content li .user dt {
+            color: #15123f;;
+            font-weight: bold;
+        }
+
+        .data {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: .4em .1em;
+            margin-top: 0.5em;
+        }
+
+        .data dt {
+            border-right: 1px dashed #ccc;
+        }
+
+        .weibo_content li .transmit {
+            margin-right: 2em;
+            border: 1px solid #ccc;
+            margin-top: 1em;
+            padding: 1em;
+        }
+
+        .transmit_time {
+            margin-top: .5em;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .transmit_con {
+            margin-top: .5em;
+            background: #eee;
+        }
+
+        .transmit_data {
+            margin-top: 1em;
+            margin-bottom: 0;
+        }
+
+        .source {
+            color: #666;
+            font-size: 12px;
+            margin-top: -0.6em;
+        }
+
+    </style>
+    <script type="text/javascript" src=".static/echarts.js"></script>
+
+</head>
+<body>
+<div class="weibo_head">
+    <!--<div> CAMPAIGN for TOBACCO-FREE Kids</div>-->
+    <!--<div>Market Intelligence Center</div>-->
+    <div class="weibo_head_right">2018-12-25</div>
+</div>
+
+<div style="margin-left:1%;padding:1px 16px;height:auto;margin-right:1%;margin-top:25px;">
+  <hr width=100% size=3 color=#000>
+  <h1 align="center">减盐-新闻
+    <br>Salt Reduction - News</h1>
+  <hr width=100% size=3 color=#000>
+  <div class="weibo_header">
+    <p>今日（2018-12-25）共监测到10条资讯。请点击标题查看原文。</p>
+    <p>There are 10 articles monitored today 2018-12-25. Please click the title to view full information.</p>
+    <p>The original article is in Chinese only.</p>
+  </div>
+  <div id="salt_news_container" style="width: 600px;height:400px;margin:0 auto;"></div>
+  <script type="text/javascript">var dom = document.getElementById("salt_news_container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    app.title = "减盐新闻柱状图";
+    option = {
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          type: "shadow"
+        }
+      },
+      legend: {
+        data: ["advocated（提倡）", "against（反对）", "neutrality（中立）"],
+      },
+      grid: {
+        left: "3%",
+        right: "4%",
+        bottom: "3%",
+        top: "20%",
+        containLabel: true
+      },
+      xAxis: [{
+        type: "category",
+        data: ["government(政府)", "enterprise(企业)", "public(公众)"]
+      }],
+      yAxis: [{
+        type: "value"
+      }],
+      series: [{
+        name: "advocated（提倡）",
+        type: "bar",
+        stack: "提倡",
+        data: [0, 0, 10]
+      },
+      {
+        name: "against（反对）",
+        type: "bar",
+        stack: "反对",
+        data: [0, 0, 0]
+      },
+      {
+        name: "neutrality（中立）",
+        type: "bar",
+        stack: "中立",
+        data: [0, 0, 0]
+      }]
+    };
+    if (option && typeof option === "object") {
+      myChart.setOption(option, true);
+    }</script>
+  <div>
+    <h2>山东
+      <br>Shandong</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab1">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">食物中的钠
+                      <br>Sodium in food</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">高血压
+                      <br>Hypertension</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">心血管健康
+                      <br>Cardiovascular health</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">综合健康信息
+                      <br>Comprehensive Health Information</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">1.
+            <a href="http://muji.bandao.cn/a/162943.html" target="_blank">过量饮酒、吸烟等不良生活习惯成山东男性健康杀手</a></td>
+          <td width="18%">来源：半岛网</td>
+          <td width="17%">主体：公众</td>
+          <td width="12%">态度：提倡</td>
+          <td width="10%" style="text-align:right;">时间：  14:18:17</td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">
+            <a href="http://muji.bandao.cn/a/162943.html" target="_blank">Excessive drinking, smoking and other bad habits become male health killers in Shandong Province</a></td>
+          <td width="18%">Source: Peninsula Network</td>
+          <td width="17%">Subject: public</td>
+          <td width="12%">Attitude: advocate</td>
+          <td width="10%" style="text-align:right;">Time:  14:18:17</td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>记者从今天山东省政府新闻办召开的发布会获悉，山东省率先在全国开展并完成全人群全生命周期健康危险因素和健康状况研究，首次依托大数据手段摸清了山东省居民的健康状况。 通过对500万人17大类153种疾病的疾病负担分析表明，致山东省男女性死亡率前3位的疾病均为循环系统疾病（心脑血管疾病）、肿瘤、呼吸系统疾病，其死亡率均超过50/10万。与全国调查数据相比，山东人肺癌、胃癌和食管癌的死亡率高于全国平均水平，肝癌与全国平均水平接近。</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>According to the press conference held by the Press Office of the Shandong Provincial Government today, Shandong Province took the lead in carrying out and completing the whole life cycle health risk factors and health status research in the whole population, and for the first time relied on big data to find out the health status of Shandong residents. According to the analysis of disease burden of 5 million people, 17 categories and 153 diseases, the top three diseases causing male and female mortality in Shandong Province are circulatory system diseases (cardiovascular and cerebrovascular diseases), tumors and respiratory diseases, and their mortality rates are all over 50/100,000. Compared with the national survey data, the mortality rates of lung cancer, gastric cancer and esophageal cancer in Shandong Province are higher than the national average, while the mortality rates of liver cancer are close to the national average.</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>河南
+      <br>Henan</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab1">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">食物中的钠
+                      <br>Sodium in food</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">高血压
+                      <br>Hypertension</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">心血管健康
+                      <br>Cardiovascular health</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">综合健康信息
+                      <br>Comprehensive Health Information</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>安徽
+      <br>Anhui</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab1">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">食物中的钠
+                      <br>Sodium in food</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">高血压
+                      <br>Hypertension</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">心血管健康
+                      <br>Cardiovascular health</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">综合健康信息
+                      <br>Comprehensive Health Information</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>浙江
+      <br>Zhejiang</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab1">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">食物中的钠
+                      <br>Sodium in food</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">高血压
+                      <br>Hypertension</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">心血管健康
+                      <br>Cardiovascular health</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">综合健康信息
+                      <br>Comprehensive Health Information</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>其他省份
+      <br>Other Provinces</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab1">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">食物中的钠
+                      <br>Sodium in food</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">高血压
+                      <br>Hypertension</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">1.
+            <a href="http://www.hi.chinanews.com/hnnew/2018-12-25/4_100739.html" target="_blank">专家科普：孕妈妈的玻璃心之妊娠期高血压</a></td>
+          <td width="18%">来源：新华报业网</td>
+          <td width="17%">主体：公众</td>
+          <td width="12%">态度：提倡</td>
+          <td width="10%" style="text-align:right;">时间：  02:11:12</td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">
+            <a href="http://www.hi.chinanews.com/hnnew/2018-12-25/4_100739.html" target="_blank">Expert Science Popularization: Pregnant Mother's Glass Heart of Pregnancy Hypertension</a></td>
+          <td width="18%">Source: Xinhua News Network</td>
+          <td width="17%">Subject: public</td>
+          <td width="12%">Attitude: advocate</td>
+          <td width="10%" style="text-align:right;">Time:  02:11:12</td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>怀孕以后感冒了怎么办？发烧了怎么办？今天产检又没过，血糖升高了该怎么办？血压升高了该怎么办？吃药呢，怕影响孩子；不吃药呢，自己又很难受。如何平衡我的内心。 似乎每一个孕妈妈都有着一颗玻璃心，肚子里的宝宝就代表一切，为了宝宝的健康，妈妈们可以忍受一切，坚决不吃药不打针，生怕药物的副作用影响孩子，但是这样真的能够帮助到你的宝宝吗？什么是妊娠期高血压？ 妊娠合并高血压的患病率占孕妇的5%-10%，其中70%是妊娠期出现的高血压，其余30%在妊娠前即存在高血压。</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>What if you catch a cold after pregnancy? What if you have a fever? Today's maternity check-up has not been done, blood sugar increased how to do? What should we do if blood pressure rises? Take medicine, afraid of affecting children; do not take medicine, they are very uncomfortable. How to balance my heart. It seems that every pregnant mother has a glass heart. The baby in her belly represents everything. For the sake of her baby's health, mothers can tolerate everything. They are determined not to take any medicine or injections. They are afraid that the side effects of drugs will affect their children. But can this really help your baby? What is gestational hypertension? Pregnancy with hypertension accounted for 5% to 10% of pregnant women, of which 70% were hypertension during pregnancy, and the remaining 30% were hypertension before pregnancy.</div></td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">2.
+            <a href="http://www.stnn.cc/female/yy/2018/1226/602931.shtml" target="_blank">垃圾食物导致儿童患高血压这些食物要远离</a></td>
+          <td width="18%">来源：星岛环球网</td>
+          <td width="17%">主体：公众</td>
+          <td width="12%">态度：提倡</td>
+          <td width="10%" style="text-align:right;">时间：  07:58:29</td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">
+            <a href="http://www.stnn.cc/female/yy/2018/1226/602931.shtml" target="_blank">Junk food causes high blood pressure in children. Keep away from these foods</a></td>
+          <td width="18%">Source: Star Island Global Network</td>
+          <td width="17%">Subject: public</td>
+          <td width="12%">Attitude: advocate</td>
+          <td width="10%" style="text-align:right;">Time:  07:58:29</td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>由于饮食结构的变化，现在很多一些过去以为只有成年人甚至中老年人才能有的疾病，小孩子竟然也患上了，这主要跟一些食物的不节制有很大关系，有一些垃圾食物，家长们真的应该让孩子们少吃为妙。 据网媒报道：由于饮食结构的变化，现在很多一些过去以为只有成年人甚至中老年人才能有的疾病，小孩子竟然也患上了，这主要跟一些食物的不节制有很大关系，有一些垃圾食物，家长们真的应该让孩子们少吃为妙： 儿童尽量远离这些垃圾食物。</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>Because of the change of dietary structure, many diseases that only adults and even middle-aged and elderly people could have, children even suffered from, which is mainly related to the uncontrollability of some foods. There are some junk food, parents should really let children eat less. According to online media reports: due to changes in dietary structure, many children who used to think that only adults and even middle-aged and elderly people could have diseases have children, which is mainly related to the uncontrollability of some foods, some junk food, parents really should let children eat less: children try to stay away from these junk food.</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">心血管健康
+                      <br>Cardiovascular health</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">综合健康信息
+                      <br>Comprehensive Health Information</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">1.
+            <a href="http://www.1m3d.com/thread-537873-1-1.html" target="_blank">[摘编稿件] 清淡饮食有原则光吃素降不了三高</a></td>
+          <td width="18%">来源：锦州新闻网</td>
+          <td width="17%">主体：公众</td>
+          <td width="12%">态度：提倡</td>
+          <td width="10%" style="text-align:right;">时间：  07:16:13</td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">
+            <a href="http://www.1m3d.com/thread-537873-1-1.html" target="_blank">light diet has a principle that vegetarianism alone can not reduce three heights</a></td>
+          <td width="18%">Source: Jinzhou News Network</td>
+          <td width="17%">Subject: public</td>
+          <td width="12%">Attitude: advocate</td>
+          <td width="10%" style="text-align:right;">Time:  07:16:13</td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div> 在“三高”的风险因素中，高脂饮食是重要一项。因此，不少人认为，只要坚持吃素，就能远离“三高”。医学专家强调，这种说法其实是种误区，既不科学，更不利于健康。 长期吃素容易引起体内B族维生素缺乏，特别是维生素B1、B2、B6等在蛋、奶、鱼、肉中含量丰富，若体内缺乏这些营养素，反而会影响糖、脂代谢及能量消耗，严重者还可能导致动脉硬化。此外，长期吃素会令体内缺乏蛋白质、铁、锌等，造成营养失衡。 面对“三高”患者，医生都会建议清淡饮食，但清淡饮食不等于完全吃素，甚至鱼、肉、蛋、奶一点不都沾。</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>Among the risk factors of "three high", high-fat diet is an important one. Therefore, many people believe that as long as we stick to vegetarian diet, we can stay away from the "three high". Medical experts emphasize that this statement is actually a misunderstanding, neither scientific nor healthy. Long-term vegetarian diet can easily lead to vitamin B deficiency in the body, especially vitamin B1, B2, B6, which are abundant in eggs, milk, fish and meat. If the body lacks these nutrients, it will affect sugar, lipid metabolism and energy consumption. Serious cases may also lead to atherosclerosis. In addition, a long-term vegetarian diet will lead to a lack of protein, iron, zinc and other nutrients, resulting in nutritional imbalance. Faced with "three high" patients, doctors will recommend light diet, but light diet is not equal to complete vegetarian, even fish, meat, eggs, milk are not stained at all.</div></td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">2.
+            <a href="https://www.channel8news.sg/news8/singapore/20181225-sg-christmas-catering/4211490.html" target="_blank">圣诞节较健康食物菜单越来越受国人欢迎</a></td>
+          <td width="18%">来源：Channel 8 News & Current Affairs</td>
+          <td width="17%">主体：公众</td>
+          <td width="12%">态度：提倡</td>
+          <td width="10%" style="text-align:right;">时间：  16:58:25</td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">
+            <a href="https://www.channel8news.sg/news8/singapore/20181225-sg-christmas-catering/4211490.html" target="_blank">The menu of healthier foods at Christmas is becoming more and more popular among Chinese people.</a></td>
+          <td width="18%">Source: Channel 8 News Current Affairs</td>
+          <td width="17%">Subject: public</td>
+          <td width="12%">Attitude: advocate</td>
+          <td width="10%" style="text-align:right;">Time:  16:58:25</td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>圣诞节少不了吃大餐，而本地有越来越多人会选择较健康的自助餐菜单。有业者表示，今年圣诞期间接到的较健康食物订单比去年高多达四成。一些受访业者也指出，受近来食物中毒事件影响，今年圣诞节的业绩增幅不如预期。 少油、少盐、少糖，这桌上的食物都符合保健促进局的较健康菜单标准，让食客不仅能大快朵颐，也吃得健康。 较健康食物菜单订户林莉莉说：“我们比较讲究健康，所以叫一些比较清淡的食物给客人吃。” 这名客人说：“觉得那个饭还蛮好吃的，就是它是炒饭，可是是用糙米来做的。”</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>There is no shortage of big meals for Christmas, and more and more local people will choose healthier buffet menus. Employees say orders for healthier foods during Christmas this year are up to 40% higher than last year. Some respondents also pointed out that due to recent food poisoning incidents, Christmas performance growth this year was not as expected. Less oil, less salt and less sugar. The food on this table is in line with the health menu standard of the Health Promotion Bureau, so that diners can not only eat fast, but also eat healthily. Lin Lili, a subscriber to the healthier food menu, said, "We are more health-conscious, so we call some lighter food for our guests to eat." The guest said, "I think it's delicious. It's fried rice, but it's made of brown rice."</div></td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">3.
+            <a href="http://www.sohu.com/a/284403501_164924" target="_blank">你另一半对你寿命的影响，比你爸妈还大!</a></td>
+          <td width="18%">来源：搜狐</td>
+          <td width="17%">主体：公众</td>
+          <td width="12%">态度：提倡</td>
+          <td width="10%" style="text-align:right;">时间：  18:58:31</td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">
+            <a href="http://www.sohu.com/a/284403501_164924" target="_blank">Your other half has a greater impact on your life than your parents!</a></td>
+          <td width="18%">Source: Sohu</td>
+          <td width="17%">Subject: public</td>
+          <td width="12%">Attitude: advocate</td>
+          <td width="10%" style="text-align:right;">Time:  18:58:31</td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>人们都认为长寿有家族遗传倾向，而最新研究表明，遗传对寿命的影响还不如伴侣。 2018年11月《遗传学》杂志发表了一项超大规模的有关寿命的研究。研究人员分析4亿人的资料得出，基因对寿命的影响比重或许不足7%，而夫妻之间的寿命相关度更高。 这项研究发现：无血缘关系的夫妻间寿命的相关性，反而比与兄弟姐妹和父母更紧密。 此外，通过选择与自己一样的人结婚生子，他们将影响寿命的因素双倍地传递给他们的孩子，但并不是通过遗传的方式——而是父母的生活方式和生活态度，从而影响子女的寿命。 为什么夫妻寿命相关度较高？</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>It is generally believed that longevity has a family genetic predisposition, and recent studies have shown that heredity has less impact on longevity than partners. In November 2018, Genetics published a very large-scale study on longevity. Researchers analyzed 400 million people's data and concluded that genes may have less than 7% impact on life expectancy, while couples have a higher correlation between life expectancy. The study found that unrelated couples were more closely related to life expectancy than siblings and parents. In addition, by choosing people like themselves to marry and have children, they will double the factors affecting life expectancy to their children, but not by genetic means - but by parents'lifestyle and attitudes towards life, thereby affecting their children's life expectancy. Why is there a high correlation between husband and wife's life expectancy?</div></td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">4.
+            <a href="http://www.sohu.com/a/284448901_391301" target="_blank">清淡饮食为什么会吃出一身病！专家说出问题真相……</a></td>
+          <td width="18%">来源：搜狐</td>
+          <td width="17%">主体：公众</td>
+          <td width="12%">态度：提倡</td>
+          <td width="10%" style="text-align:right;">时间：  20:58:33</td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">
+            <a href="http://www.sohu.com/a/284448901_391301" target="_blank">Why does light diet make you sick? Experts tell the truth...</a></td>
+          <td width="18%">Source: Sohu</td>
+          <td width="17%">Subject: public</td>
+          <td width="12%">Attitude: advocate</td>
+          <td width="10%" style="text-align:right;">Time:  20:58:33</td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>清淡饮食为什么会吃出一身病！专家说出问题真相…… 案例：前段时间浙江东阳的吴奶奶，胆囊结石发作，考虑到吴奶奶基础疾病较多，胆囊已失去该有的功能，加上体内的结石又属于充满型结石，医生进行了胆囊切除手术，并取出221颗结石！ 通过与家人的沟通交流和仪器检测分析，医生得出结论：吴奶奶的结石如此之多很可能是“清淡饮食”导致的！ 为何一直被奉为健康养生的饮食习惯会招致结石？饮食清淡到底该怎么吃？ 专家解释道，饮食清淡并不意味着不吃肉，而是要合理搭配日常膳食，讲究食物的多样化，控制好蛋白质、脂肪、碳水化合物间的平衡。</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>Why does light diet make you sick? Experts tell the truth... Case: Some time ago, Granny Wu of Dongyang, Zhejiang, had gallbladder stone attack. Considering that Granny Wu had many basic diseases, the gallbladder had lost its function. In addition, the gallbladder was full of stones. The doctor had cholecystectomy and removed 221 stones. Through communication with family members and instrument testing and analysis, the doctor concluded that Grandma Wu's stones were probably caused by "light diet"! Why do dietary habits, which have always been regarded as healthy, lead to stones? How to eat a light diet? Experts explained that a light diet does not mean not eating meat, but to rationally match the daily diet, pay attention to the diversity of food, control the balance between protein, fat and carbohydrates.</div></td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">5.
+            <a href="http://www.sohu.com/a/284328325_100158156" target="_blank">入冬后，我家每周都会做上这茶，孩子多吃身体强壮，少生病</a></td>
+          <td width="18%">来源：搜狐</td>
+          <td width="17%">主体：公众</td>
+          <td width="12%">态度：提倡</td>
+          <td width="10%" style="text-align:right;">时间：  13:01:19</td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">
+            <a href="http://www.sohu.com/a/284328325_100158156" target="_blank">After winter, my family will make this tea every week. The children eat more strong and less sick.</a></td>
+          <td width="18%">Source: Sohu</td>
+          <td width="17%">Subject: public</td>
+          <td width="12%">Attitude: advocate</td>
+          <td width="10%" style="text-align:right;">Time:  13:01:19</td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>猪蹄是人们喜欢食用的营养佳品，这也是我最喜欢的食物之一。猪蹄中含有丰富的蛋白质、脂肪和碳水化合物，并含有钙、磷、镁、铁以及维生素A、D、E、K等有益成分。 猪蹄是人们喜欢食用的营养佳品，这也是我最喜欢的食物之一。在冬天里，这个猪蹄可是个好东西，我们全家都爱吃它，女人吃猪蹄可以丰胸，小孩吃猪蹄不仅补钙，身体强壮还不容易生病，这老人吃猪蹄可以缓解骨质酥松的速度。 猪蹄有大量的胶原蛋白质，它在烹调过程中可转化成明胶。</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>Pig hoof is a nutritious food that people like to eat, which is also one of my favorite foods. Pig hoof is rich in protein, fat and carbohydrate, and contains calcium, phosphorus, magnesium, iron and vitamin A, D, E, K and other beneficial ingredients. Pig hoof is a nutritious food that people like to eat, which is also one of my favorite foods. In winter, this pig's hoof is a good thing. Our whole family loves it. Women can breast enlargement when eating pig's hoof. Children can not only supplement calcium when eating pig's hoof, but also be strong and not easy to get sick. The old man can alleviate the speed of osteoporosis when eating pig's hoof. Pig hooves have a large amount of collagen, which can be converted into gelatin during cooking.</div></td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">6.
+            <a href="http://baby.tom.com/yyzn/201812/1115101248.html" target="_blank">婴儿辅食蔬菜添加顺序是什么？</a></td>
+          <td width="18%">来源：TOM</td>
+          <td width="17%">主体：公众</td>
+          <td width="12%">态度：提倡</td>
+          <td width="10%" style="text-align:right;">时间：  16:02:29</td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">
+            <a href="http://baby.tom.com/yyzn/201812/1115101248.html" target="_blank">What is the order of vegetable supplements for infants?</a></td>
+          <td width="18%">Source: TOM</td>
+          <td width="17%">Subject: public</td>
+          <td width="12%">Attitude: advocate</td>
+          <td width="10%" style="text-align:right;">Time:  16:02:29</td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>断奶之后，就可以添加一些辅食了，这样宝宝才能够吸收更多的营养，培养自己的独立自主功能。有的时候宝宝的辅食会吃一些肉食，有的时候会吃一些面食，还有的时候会吃一些蔬菜之类的食物，相对来说蔬菜更为重要一些。那么问题来了，婴儿辅食蔬菜添加顺序是什么? 大多数蔬菜都适合给宝宝制作辅食，包括小白菜、菠菜、西兰花、西红柿、甜椒、南瓜、红薯、土豆、茄子、冬瓜等。建议先从味道清淡的根茎类蔬菜开始添加，如胡萝卜、南瓜、红薯、土豆、山药、芋头等。 </div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>After weaning, you can add some supplementary food, so that the baby can absorb more nutrients, develop their own independent function. Sometimes the baby's complementary food will eat some meat, sometimes will eat some pasta, and sometimes will eat some vegetables and other foods, vegetable is more important. Then the question arises, what is the order of adding baby's supplementary vegetables? Most vegetables are suitable for baby to make supplementary foods, including cabbage, spinach, broccoli, tomatoes, sweet pepper, pumpkin, sweet potatoes, eggplant, winter melon and so on. It is suggested that root vegetables with light taste should be added first, such as carrots, pumpkins, sweet potatoes, potatoes, yam and taro.</div></td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">7.
+            <a href="https://www.tech-food.com/news/detail/n1414876.htm" target="_blank">2018年十大食品安全谣言盘点，第一条就有好多人被忽悠</a></td>
+          <td width="18%">来源：中国食品科技网</td>
+          <td width="17%">主体：公众</td>
+          <td width="12%">态度：提倡</td>
+          <td width="10%" style="text-align:right;">时间：  16:18:19</td>
+        </tr>
+        <tr style="padding-top:10px;">
+          <td width="43%" class="h3">
+            <a href="https://www.tech-food.com/news/detail/n1414876.htm" target="_blank">The top ten food safety rumors in 2018 were counted, and many people were fooled in the first one.</a></td>
+          <td width="18%">Source: China Food Science and Technology Network</td>
+          <td width="17%">Subject: public</td>
+          <td width="12%">Attitude: advocate</td>
+          <td width="10%" style="text-align:right;">Time:  16:18:19</td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>2018年只剩下最后一个星期了，大家都开始收拾心情整理自己，为迎接新的一年做准备。辟谣君也没闲着，年底了，怎么能不盘点一下今年坑过大家的谣言呢？ 食品安全、食品谣言是当下网民关注度最高的两类食品舆情，今天我们就来说一说2018年传播热度较广的10大食品安全谣言。 谣言一：白米饭是垃圾之王 流言：白米饭高糖、高热量、低蛋白质、低维生素、低矿物质、低纤维，符合世界卫生组织对“垃圾食品”的定义。而且白米饭的升糖指数高达87，是高血压、糖尿病等慢性疾病的诱因。</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>With only the last week remaining in 2018, everyone began to put their minds in order to prepare for the new year. It's the end of the year. How can we not take stock of the rumors that have pitted us this year? Food safety and food rumors are two kinds of food public opinions with the highest concern among Internet users. Today, let's talk about the 10 most popular food safety rumors spread in 2018. Rumor 1: White rice is the king of garbage rumors: white rice is high in sugar, high in calories, low in protein, low in vitamins, low in minerals, low in fiber, in line with the World Health Organization definition of "junk food". And the sugar index of white rice is as high as 87, which is the cause of chronic diseases such as hypertension and diabetes.</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p style="background-color: #fff;height: 200px;"></p>
+
+<div style="margin-left:1%;padding:1px 16px;height:auto;margin-right:1%;margin-top:25px;">
+    <hr width=100% size=3 color=#000>
+    <h1 align="center">减盐-微信<br>Salt Reduction - WeChat</h1>
+    <hr width=100% size=3 color=#000>
+    <div class="weibo_header">
+        <p>2018-12-25，共监测到277篇微信公众号文章，本页面显示当日重复发布数量排名前五的文章，请点击标题搜索原文。</p>
+        <p>A total of 277 WeChat public articles were monitored in 2018-12-25. This page shows the top five
+            articles by
+            repeat number today.</p>
+        <p>由于微信公众号文章没有固定的链接，因而标题链接到的是根据文章标题进行检索的结果页面。</p>
+        <p>Because wechat articles don't have certain urls, the titles link to the websites that shows the result that
+            searching with the titles.</p>
+        <p>The original article is in Chinese only.</p>
+        <p>下图展示了最近30天的数据获取量。</p>
+        <p>The following figure shows the amount of data acquired in the last 30 days.</p>
+    </div>
+
+    <div id="salt_wechat_container" style="width: 100%;height:400px;margin:0 auto;"></div>
+
+    <script type="text/javascript">
+        var dom = document.getElementById("salt_wechat_container");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        app.title = '减盐微信柱状图';
+
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend: {
+                data: ['Number of articles 文章数']
+            },
+            grid: {
+                left: '5%',
+                right: '5%',
+                bottom: '10%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisLabel: {
+                        interval: 0,
+                        rotate: 40
+                    },
+                    data: ["2018-11-26", "2018-11-27", "2018-11-28", "2018-11-29", "2018-11-30", "2018-12-01", "2018-12-02", "2018-12-03", "2018-12-04", "2018-12-05", "2018-12-06", "2018-12-07", "2018-12-08", "2018-12-09", "2018-12-10", "2018-12-11", "2018-12-12", "2018-12-13", "2018-12-14", "2018-12-15", "2018-12-16", "2018-12-17", "2018-12-18", "2018-12-19", "2018-12-20", "2018-12-21", "2018-12-22", "2018-12-23", "2018-12-24", "2018-12-25"]
+        }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+            series
+        :
+        [
+            {
+                name: 'Number of articles 文章数',
+                type: 'bar',
+                data: [530, 490, 508, 496, 524, 489, 508, 555, 533, 572, 520, 521, 476, 483, 550, 565, 508, 519, 549, 531, 512, 540, 501, 495, 546, 550, 508, 538, 616, 277]
+        },
+        ]
+        }
+        ;
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    </script>
+
+    <table width="100%" border="0" cellspacing="5" cellpadding="0" style="margin-top: 2em" align="#CENTER">
+        <tbody>
+        <tr>
+            <td colspan="4" style="height: 45px;">
+                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                    <tbody>
+
+                    <div name="wechat_salt_promote">
+                        <div>
+                            <tr>
+                                <td colspan="4" style="padding-top:10px"><br>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                        <tr>
+                                            <td bgcolor="#666666" align="center" width="370" class="WhiteRow"
+                                                style="padding:2px 2px 2px 2px;color:#ffffff;">
+                                                <b style="color:#ffffff;">热门文章-前五<br>Popular Articles - Top 5</b>
+                                            </td>
+                                            <td colspan="2">&nbsp;</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+
+                            <div class="wechat-article-info">
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>1.&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E9%AB%98%E8%A1%80%E5%8E%8B%E7%9A%84%E4%BA%BA%E6%8A%93%E7%B4%A7%E7%9C%8B%EF%BC%81%E8%BF%99%E4%BB%B6%E4%BA%8B%E4%B8%80%E6%97%A6%E5%81%9A%E9%94%99%E4%BA%86%EF%BC%8C%E5%90%8E%E6%9E%9C%E9%9D%9E%E5%B8%B8%E4%B8%A5%E9%87%8D%EF%BC%81" target="_blank">高血压的人抓紧看！这件事一旦做错了，后果非常严重！</a></div>
+                                    </td>
+                                    <td width="15%">重复数：2</td>
+                                    <td width="15%" style="text-align:right;">日期：2018-12-25</td>
+                                </tr>
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>&nbsp;&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E9%AB%98%E8%A1%80%E5%8E%8B%E7%9A%84%E4%BA%BA%E6%8A%93%E7%B4%A7%E7%9C%8B%EF%BC%81%E8%BF%99%E4%BB%B6%E4%BA%8B%E4%B8%80%E6%97%A6%E5%81%9A%E9%94%99%E4%BA%86%EF%BC%8C%E5%90%8E%E6%9E%9C%E9%9D%9E%E5%B8%B8%E4%B8%A5%E9%87%8D%EF%BC%81" target="_blank">People with high blood pressure look up! Once this matter is done wrong, the consequences are very serious!</a></div>
+                                    </td>
+                                    <td width="15%">Repeat Number：2</td>
+                                    <td width="15%" style="text-align:right;">Data：2018-12-25</td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>最大块的因素就是吃盐。规定每人每天摄入食盐6克左右，有了高血压并发症5克左右。因为水钠潴留是高血压很危险的一个因素，所以高血压患者一定要注意盐的摄入量。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>The main factor is eating salt. It is stipulated that each person eats about 6 grams of salt per day. People with complications of hypertension consume about 5 grams of salt a day. Because sodium retention is a risk factor for high blood pressure, hypertensive patients must pay attention to salt intake.</div>
+                                    </td>
+                                </tr>
+                            </div>
+
+                            <div class="wechat-article-info">
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>2.&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E8%84%8220%E5%B8%A6%E4%BD%A0%E7%9C%8B%E7%9C%8B%E3%80%81%E8%82%A5%E8%83%96%E6%98%AF%E8%84%82%E8%82%AA%E8%AF%B4%E4%BA%86%E7%AE%97" target="_blank">脂20带你看看、肥胖是脂肪说了算</a></div>
+                                    </td>
+                                    <td width="15%">重复数：2</td>
+                                    <td width="15%" style="text-align:right;">日期：2018-12-25</td>
+                                </tr>
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>&nbsp;&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E8%84%8220%E5%B8%A6%E4%BD%A0%E7%9C%8B%E7%9C%8B%E3%80%81%E8%82%A5%E8%83%96%E6%98%AF%E8%84%82%E8%82%AA%E8%AF%B4%E4%BA%86%E7%AE%97" target="_blank">Obesity is determined by fat</a></div>
+                                    </td>
+                                    <td width="15%">Repeat Number：2</td>
+                                    <td width="15%" style="text-align:right;">Data：2018-12-25</td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>食盐过度会给身体带来高血压、心血管疾病等隐患。盐中含有大量的钠离子，钠会引起体内血容量的增加，所以食用过多的盐，就会导致血压升高，心脏负担也会加重。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>Excessive salt can lead to high blood pressure, cardiovascular disease and other hidden dangers. Salt contains a large number of sodium ions, sodium will cause the increase of blood volume in the body, so eating too much salt will lead to increased blood pressure. And the burden of the heart will also increase.</div>
+                                    </td>
+                                </tr>
+                            </div>
+
+                            <div class="wechat-article-info">
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>3.&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E9%99%A2%E5%A3%AB%E4%BB%AC%E6%80%92%E4%BA%86%EF%BC%9A%E5%88%AB%E5%86%8D%E8%AF%B4%E8%BF%99%E5%87%A0%E5%8F%A5%E2%80%9C%E9%AC%BC%E8%AF%9D%E2%80%9D%EF%BC%8C%E6%9D%A5%E9%AA%97%E4%B8%AD%E5%9B%AF%E4%BA%BA%E4%BA%86%EF%BC%81" target="_blank">院士们怒了：别再说这几句“鬼话”，来骗中囯人了！</a></div>
+                                    </td>
+                                    <td width="15%">重复数：2</td>
+                                    <td width="15%" style="text-align:right;">日期：2018-12-25</td>
+                                </tr>
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>&nbsp;&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E9%99%A2%E5%A3%AB%E4%BB%AC%E6%80%92%E4%BA%86%EF%BC%9A%E5%88%AB%E5%86%8D%E8%AF%B4%E8%BF%99%E5%87%A0%E5%8F%A5%E2%80%9C%E9%AC%BC%E8%AF%9D%E2%80%9D%EF%BC%8C%E6%9D%A5%E9%AA%97%E4%B8%AD%E5%9B%AF%E4%BA%BA%E4%BA%86%EF%BC%81" target="_blank">The academicians were angry: stop saying these "ghost words" to deceive the people!</a></div>
+                                    </td>
+                                    <td width="15%">Repeat Number：2</td>
+                                    <td width="15%" style="text-align:right;">Data：2018-12-25</td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>食盐最多一小瓶盖 饮食降血压的第一点就是要少吃盐。食盐中的“钠”能引起水钠潴留，导致外周血管阻力增大，引起血压升高。 世界卫生组织建议正常人群每日食盐量为6-8克，也就是一小啤酒瓶盖。高血压患者应控制在4克以下。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>The salt intake is up to a small cap. The first point of diet to lower blood pressure is to eat less salt. "Sodium" in salt can cause sodium retention, leading to increased peripheral vascular resistance and elevated blood pressure. The World Health Organization recommends that the normal population have a daily salt intake of 6-8 grams, which is the capacity of a small beer bottle cap. Hypertensive patients should be controlled below 4 grams.</div>
+                                    </td>
+                                </tr>
+                            </div>
+
+                            <div class="wechat-article-info">
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>4.&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E5%B0%BF%E6%AF%92%E7%97%87%E8%80%85%E8%B6%8A%E6%9D%A5%E8%B6%8A%E5%A4%9A%EF%BC%8C%E5%8C%BB%E7%94%9F%E5%8A%9D%E4%BD%A0%EF%BC%9A4%E7%A7%8D%E9%A3%9F%E7%89%A9%E5%B0%BD%E9%87%8F%E5%B0%91%E5%90%83%EF%BC%8C%E8%82%BE%E4%BC%9A%E6%84%9F%E6%BF%80%E4%BD%A0" target="_blank">尿毒症者越来越多，医生劝你：4种食物尽量少吃，肾会感激你</a></div>
+                                    </td>
+                                    <td width="15%">重复数：2</td>
+                                    <td width="15%" style="text-align:right;">日期：2018-12-25</td>
+                                </tr>
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>&nbsp;&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E5%B0%BF%E6%AF%92%E7%97%87%E8%80%85%E8%B6%8A%E6%9D%A5%E8%B6%8A%E5%A4%9A%EF%BC%8C%E5%8C%BB%E7%94%9F%E5%8A%9D%E4%BD%A0%EF%BC%9A4%E7%A7%8D%E9%A3%9F%E7%89%A9%E5%B0%BD%E9%87%8F%E5%B0%91%E5%90%83%EF%BC%8C%E8%82%BE%E4%BC%9A%E6%84%9F%E6%BF%80%E4%BD%A0" target="_blank">There are more and more uremic patients. Doctors advise you to eat as little as possible of the four foods. Kidney will appreciate you.</a></div>
+                                    </td>
+                                    <td width="15%">Repeat Number：2</td>
+                                    <td width="15%" style="text-align:right;">Data：2018-12-25</td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>盐可以说是生活中必不可少的调味品，若是正常摄入盐分，对身体是有好处的。 但是现代人饮食口味普遍偏重，导致吃盐远远超过每日正常推荐量。 这也就造成吃得过咸，增加了肾脏负担，加之，摄入过多的钠会导致体内电解质失衡，体内水分不易排出，进一步增加肾脏负担。 </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>Salt can be said to be an essential condiment in life. If you eat salt regularly, it is good for your body. However, the taste of modern people's diet is generally biased, resulting in salt intake far exceeding the daily recommended amount. This also causes eating too salty and increasing the burden on the kidneys. In addition, excessive intake of sodium can lead to imbalance of electrolytes in the body, and the body's water is not easily discharged, further increasing the burden on the kidneys.</div>
+                                    </td>
+                                </tr>
+                            </div>
+
+                            <div class="wechat-article-info">
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>5.&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E5%9C%A8%E6%97%A5%E5%B8%B8%E9%A5%AE%E9%A3%9F%E4%B8%AD%E5%A6%82%E4%BD%95%E5%87%8F%E7%9B%90%EF%BC%9F%E6%9C%89%E5%87%8F%E7%9B%90%E5%B0%8F%E7%AA%8D%E9%97%A8%E5%90%97%EF%BC%9F" target="_blank">在日常饮食中如何减盐？有减盐小窍门吗？</a></div>
+                                    </td>
+                                    <td width="15%">重复数：1</td>
+                                    <td width="15%" style="text-align:right;">日期：2018-12-25</td>
+                                </tr>
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>&nbsp;&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E5%9C%A8%E6%97%A5%E5%B8%B8%E9%A5%AE%E9%A3%9F%E4%B8%AD%E5%A6%82%E4%BD%95%E5%87%8F%E7%9B%90%EF%BC%9F%E6%9C%89%E5%87%8F%E7%9B%90%E5%B0%8F%E7%AA%8D%E9%97%A8%E5%90%97%EF%BC%9F" target="_blank">How to reduce salt in your diet? Do you have any salt reduction tips?</a></div>
+                                    </td>
+                                    <td width="15%">Repeat Number：1</td>
+                                    <td width="15%" style="text-align:right;">Data：2018-12-25</td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div> 盐是我们最基本的调味品之一，减少盐摄入要改变烹饪方式、改变口味，这样做对有些人来讲是比较困难的事情。 这里提醒人们要有选择地使用这些食品，避免摄入过多的盐： （1)少食腌制的食品，如酱、酱菜、咸肉等。 （2）少食含钠量高的食物，如添加了亚硝酸盐的火腿肠、加入了小苏打的面食和糕点等。 </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>Salt is one of our most basic condiments. To reduce salt intake, it is difficult for some people to change their cooking style and taste. This reminds people to use these foods selectively and avoid excessive salt intake: (1) Eat less salted foods, such as sauce, pickles, bacon, etc. (2) Eat less food with high sodium content, such as ham sausage with nitrite, pasta with baking soda and pastries.</div>
+                                    </td>
+                                </tr>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    </tbody>
+                </table>
+                <img src="http://tobaccofreekids.meihua.info/InfoItemView.aspx?itemid=ad06b991-fcba-4638-9696-e0df9bd5ced0&amp;stat=true&amp;u=xi_yin"
+                     width="1" height="1" style="border:none;width:1px;height:1px;"><br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<p style="background-color: #fff;height: 200px;"></p>
+
+<div style="margin-left:1%;padding:1px 16px;height:auto;margin-right:1%;margin-top:25px;" id="salt_weibo">
+    <hr width=100% size=3 color=#000>
+    <h1 align="center">减盐-微博<br>Salt Reduction - Weibo</h1>
+    <hr width=100% size=3 color=#000>
+    <div class="weibo_header">
+        <p>2018-12-25，共检测到1931条与“减盐”相关的微博。</p>
+        <p>本页面列出转发量超过50的微博。</p>
+        <p>点击微博内容可查看微博原文。</p>
+        <p>There are 1931 weibos about salt reduction monitored on 2018-12-25.</p>
+        <p>Weibos whose repost number is greater than 50 are listed in this page. </p>
+        <p>Click the content of each weibo, and you can see the detail imformation. </p>
+        <p>下图展示了最近30天的数据获取量。</p>
+        <p>The following figure shows the amount of data acquired in the last 30 days.</p>
+    </div>
+
+    <div id="salt_weibo_chart" style="width: 100%;height:400px;margin:0 auto;"></div>
+
+    <script type="text/javascript">
+        var dom = document.getElementById("salt_weibo_chart");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        app.title = '减盐微博数据趋势图';
+
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: [
+                    'male 男性',
+                    'female 女性'
+                ]
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisLabel: {
+                        interval: 0,
+                        rotate: 40
+                    },
+                    data: ["2018-11-26", "2018-11-27", "2018-11-28", "2018-11-29", "2018-11-30", "2018-12-01", "2018-12-02", "2018-12-03", "2018-12-04", "2018-12-05", "2018-12-06", "2018-12-07", "2018-12-08", "2018-12-09", "2018-12-10", "2018-12-11", "2018-12-12", "2018-12-13", "2018-12-14", "2018-12-15", "2018-12-16", "2018-12-17", "2018-12-18", "2018-12-19", "2018-12-20", "2018-12-21", "2018-12-22", "2018-12-23", "2018-12-24", "2018-12-25"]
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: 'male 男性',
+                    type: 'bar',
+                    stack: '数量',
+                    data: [574, 486, 320, 607, 620, 582, 583, 588, 514, 584, 708, 860, 674, 543, 628, 622, 482, 464, 598, 708, 622, 585, 634, 534, 570, 562, 537, 598, 630, 722]
+                },
+                {
+                    name: 'female 女性',
+                    type: 'bar',
+                    stack: '数量',
+                    data: [984, 807, 472, 908, 1046, 949, 1018, 868, 882, 941, 1234, 1594, 1297, 1105, 1021, 1006, 692, 826, 1035, 1064, 984, 895, 1209, 927, 985, 1013, 1056, 1081, 1052, 1209]
+                },
+            ]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    </script>
+
+
+    <div>
+        <span style="width: 370px; background:#666;color:#fff;font-weight:bold;padding:2px 3px;display:inline-block;margin-top:1.5em;text-align: center">
+            热门微博 <br> Hot Weibos
+        </span>
+
+        <ol class="weibo_content">
+                        <li>
+                <dl class="user">
+                    <dt style="width: 30%">昵称：中科体检</dt>
+                    <dt style="width: 30%">地区：江西</dt>
+                    <dt style="width: 30%">认证：机构</dt>
+                </dl>
+                <dl class="user">
+                    <dt style="width: 30%">Nickname：中科体检</dt>
+                    <dt style="width: 30%">Area：Jiangxi</dt>
+                    <dt style="width: 30%">Identity：Institution</dt>
+                </dl>
+                <dl class="source">
+                    <dt style="width: 15%">时间：2018-12-25 10:22</dt>
+                    <dt style="width: 15%">来自：皮皮时光机</dt>
+                    <dt style="width: 15%">转发数：89</dt>
+                    <dt style="width: 15%">评论数：5</dt>
+                    <dt style="width: 15%">点赞数：14</dt>
+                </dl>
+                <dl class="source">
+                    <dt style="width: 15%">Time：2018-12-25 10:22</dt>
+                    <dt style="width: 15%">Source：皮皮时光机</dt>
+                    <dt style="width: 15%">Repost：89</dt>
+                    <dt style="width: 15%">Comment：5</dt>
+                    <dt style="width: 15%">Like：14</dt>
+                </dl>
+                <div class="percon"><a style="color:black;text-align: left"
+                                       href="https://m.weibo.cn/status/4321060382556914" target="_blank">【口味重容易患6病】1、骨质疏松。饮食中钠盐过多，使钙的排泄量增加，容易发生骨质疏松症甚至骨折。2、感冒。钠离子可抑制呼吸道细胞的活性，这样感冒病毒更易于侵入呼吸道。3、胃炎、胃癌。摄人过量的高盐食物后，因食盐的渗透压高，对胃黏膜会造成直接损害。​</a>
+                </div>
+                <div class="percon"><a style="color:black;text-align: left"
+                                       href="https://m.weibo.cn/status/4321060382556914" target="_blank">[People with heavy taste are prone to 6 diseases] 1. Osteoporosis. Excessive sodium salt in the diet increases calcium excretion, which can lead to osteoporosis and even fractures. 2, a cold. Sodium ions inhibit the activity of respiratory cells, making cold viruses more susceptible to invading the respiratory tract. 3, gastritis, stomach cancer. After taking too much high-salt food, the osmotic pressure of salt will cause direct damage to the gastric mucosa.</a>
+                </div>
+            </li>
+
+        </ol>
+
+    </div>
+    
+    <div style="height: 80px"></div>
+</div>
+
+
+<p style="background-color: #fff;height: 200px;"></p>
+
+<div style="margin-left:1%;padding:1px 16px;height:auto;margin-right:1%;margin-top:25px;">
+  <hr width=100% size=3 color=#000>
+  <h1 align="center">反式脂肪酸-新闻
+    <br>Trans Fat - News</h1>
+  <hr width=100% size=3 color=#000>
+  <div class="weibo_header">
+    <p>今日（2018-12-25）共监测到0条资讯。请点击标题查看原文。</p>
+    <p>There are 0 articles monitored today 2018-12-25. Please click the title to view full information.</p>
+    <p>The original article is in Chinese only.</p>
+  </div>
+  <div id="fat_news_container" style="width: 600px;height:400px;margin:0 auto;"></div>
+  <script type="text/javascript">var dom = document.getElementById("fat_news_container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    app.title = "反式脂肪酸新闻柱状图";
+    option = {
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          type: "shadow"
+        }
+      },
+      legend: {
+        data: ["advocated（提倡）", "against（反对）", "neutrality（中立）"],
+      },
+      grid: {
+        left: "3%",
+        right: "4%",
+        bottom: "3%",
+        top: "20%",
+        containLabel: true
+      },
+      xAxis: [{
+        type: "category",
+        data: ["government(政府)", "enterprise(企业)", "public(公众)"]
+      }],
+      yAxis: [{
+        type: "value"
+      }],
+      series: [{
+        name: "advocated（提倡）",
+        type: "bar",
+        stack: "提倡",
+        data: [0, 0, 0]
+      },
+      {
+        name: "against（反对）",
+        type: "bar",
+        stack: "反对",
+        data: [0, 0, 0]
+      },
+      {
+        name: "neutrality（中立）",
+        type: "bar",
+        stack: "中立",
+        data: [0, 0, 0]
+      }]
+    };
+    if (option && typeof option === "object") {
+      myChart.setOption(option, true);
+    }</script>
+  <div>
+    <h2>山东
+      <br>Shandong</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab3">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">反式脂肪酸
+                      <br>Trans fat</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>河南
+      <br>Henan</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab3">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">反式脂肪酸
+                      <br>Trans fat</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>安徽
+      <br>Anhui</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab3">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">反式脂肪酸
+                      <br>Trans fat</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>浙江
+      <br>Zhejiang</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab3">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">反式脂肪酸
+                      <br>Trans fat</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>其他省份
+      <br>Other Provinces</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab3">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">反式脂肪酸
+                      <br>Trans fat</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>没有相关文章！</div></td>
+        </tr>
+        <tr>
+          <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;" colspan="5">
+            <div>No such articles!</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<p style="background-color: #fff;height: 200px;"></p>
+
+<div style="margin-left:1%;padding:1px 16px;height:auto;margin-right:1%;margin-top:25px;">
+    <hr width=100% size=3 color=#000>
+    <h1 align="center">反式脂肪酸-微信<br>Transfat - WeChat</h1>
+    <hr width=100% size=3 color=#000>
+    <div class="weibo_header">
+        <p>2018-12-25，共监测到356篇微信公众号文章，本页面显示当日重复发布数量排名前五的文章，请点击标题搜索原文。</p>
+        <p>A total of 356 WeChat public articles were monitored in 2018-12-25. This page shows the top five
+            articles by
+            repeat number today.</p>
+        <p>由于微信公众号文章没有固定的链接，因而标题链接到的是根据文章标题进行检索的结果页面。</p>
+        <p>Because wechat articles don't have certain urls, the titles link to the websites that shows the result that
+            searching with the titles.</p>
+        <p>The original article is in Chinese only.</p>
+        <p>下图展示了最近30天的数据获取量。</p>
+        <p>The following figure shows the amount of data acquired in the last 30 days.</p>
+    </div>
+
+    <div id="fat_wechat_container" style="width: 100%;height:400px;margin:0 auto;"></div>
+
+    <script type="text/javascript">
+        var dom = document.getElementById("fat_wechat_container");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        app.title = '反式脂肪酸微信柱状图';
+
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend: {
+                data: ['Number of articles 文章数']
+            },
+            grid: {
+                left: '5%',
+                right: '5%',
+                bottom: '10%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisLabel: {
+                        interval: 0,
+                        rotate: 40
+                    },
+                    data: ["2018-11-26", "2018-11-27", "2018-11-28", "2018-11-29", "2018-11-30", "2018-12-01", "2018-12-02", "2018-12-03", "2018-12-04", "2018-12-05", "2018-12-06", "2018-12-07", "2018-12-08", "2018-12-09", "2018-12-10", "2018-12-11", "2018-12-12", "2018-12-13", "2018-12-14", "2018-12-15", "2018-12-16", "2018-12-17", "2018-12-18", "2018-12-19", "2018-12-20", "2018-12-21", "2018-12-22", "2018-12-23", "2018-12-24", "2018-12-25"]
+        }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+            series
+        :
+        [
+            {
+                name: 'Number of articles 文章数',
+                type: 'bar',
+                data: [323, 450, 366, 428, 367, 321, 280, 368, 341, 323, 346, 249, 220, 203, 247, 299, 276, 305, 342, 297, 243, 304, 288, 261, 288, 280, 244, 288, 300, 356]
+        },
+        ]
+        }
+        ;
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    </script>
+
+    <table width="100%" border="0" cellspacing="5" cellpadding="0" style="margin-top: 2em" align="#CENTER">
+        <tbody>
+        <tr>
+            <td colspan="4" style="height: 45px;">
+                <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                    <tbody>
+
+                    <div name="wechat_salt_promote">
+                        <div>
+                            <tr>
+                                <td colspan="4" style="padding-top:10px"><br>
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                        <tr>
+                                            <td bgcolor="#666666" align="center" width="370" class="WhiteRow"
+                                                style="padding:2px 2px 2px 2px;color:#ffffff;">
+                                                <b style="color:#ffffff;">热门文章-前五<br>Popular Articles - Top 5</b>
+                                            </td>
+                                            <td colspan="2">&nbsp;</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+
+
+                            <div class="wechat-article-info">
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>1.&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E8%A1%80%E6%A0%93%E6%98%AF%E5%90%83%E5%87%BA%E6%9D%A5%E7%9A%84%EF%BC%8C%E8%BF%99%E5%9B%9B%E7%A7%8D%E9%A3%9F%E7%89%A9%E4%B8%80%E5%AE%9A%E8%A6%81%E5%B0%91%E5%90%83%E6%88%96%E4%B8%8D%E5%90%83" target="_blank">血栓是吃出来的，这四种食物一定要少吃或不吃</a></div>
+                                    </td>
+                                    <td width="15%">重复数：28</td>
+                                    <td width="15%" style="text-align:right;">日期：2018-12-25</td>
+                                </tr>
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>&nbsp;&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E8%A1%80%E6%A0%93%E6%98%AF%E5%90%83%E5%87%BA%E6%9D%A5%E7%9A%84%EF%BC%8C%E8%BF%99%E5%9B%9B%E7%A7%8D%E9%A3%9F%E7%89%A9%E4%B8%80%E5%AE%9A%E8%A6%81%E5%B0%91%E5%90%83%E6%88%96%E4%B8%8D%E5%90%83" target="_blank">Thrombosis is related to your diet. We should not eat or eat less these four kinds of foods.
+</a></div>
+                                    </td>
+                                    <td width="15%">Repeat Number：28</td>
+                                    <td width="15%" style="text-align:right;">Data：2018-12-25</td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>反式脂肪酸，这个名字可能大家听着比较陌生，但事实上我们可能每天都在吃，它就藏身于蛋黄派、奶油蛋糕、曲奇、饼干、糕点、冰淇淋、珍珠奶茶等食物中。 反式脂肪酸主要产生于植物油的氢化过程，它能升高低密度脂蛋白胆固醇，同时降低高密度脂蛋白胆固醇。而低密度脂蛋白胆固醇正是引发血压升高、动脉硬化等心血管疾病的元凶。 </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>Trans fatty acids, the name may sound strange to everyone, but in fact we may eat them every day, which is hidden in yolk pie, cream cake, cookies, biscuits, pastries, ice cream, pearl milk tea and other foods. Trans fatty acids are mainly produced in the hydrogenation process of vegetable oils, which can increase LDL cholesterol and reduce HDL cholesterol. Low density lipoprotein cholesterol is the main cause of cardiovascular diseases such as elevated blood pressure and atherosclerosis.
+</div>
+                                    </td>
+                                </tr>
+                            </div>
+
+                            <div class="wechat-article-info">
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>2.&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E6%AD%A4%E7%89%A9%E6%AF%8F%E5%B9%B4%E8%87%B4%E6%AD%BB50%E4%B8%87%E4%BA%BA%EF%BC%8C%E5%B7%B2%E8%A2%AB%E4%B8%96%E5%8D%AB%E7%BB%84%E7%BB%87%E5%91%BC%E5%90%81%E5%81%9C%E7%94%A8%EF%BC%81%E5%B0%B1%E8%97%8F%E5%9C%A8%E4%BD%A0%E6%AF%8F%E5%A4%A9%E5%90%83%E7%9A%84%E9%A3%9F%E7%89%A9%E9%87%8C" target="_blank">此物每年致死50万人，已被世卫组织呼吁停用！就藏在你每天吃的食物里</a></div>
+                                    </td>
+                                    <td width="15%">重复数：19</td>
+                                    <td width="15%" style="text-align:right;">日期：2018-12-25</td>
+                                </tr>
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>&nbsp;&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E6%AD%A4%E7%89%A9%E6%AF%8F%E5%B9%B4%E8%87%B4%E6%AD%BB50%E4%B8%87%E4%BA%BA%EF%BC%8C%E5%B7%B2%E8%A2%AB%E4%B8%96%E5%8D%AB%E7%BB%84%E7%BB%87%E5%91%BC%E5%90%81%E5%81%9C%E7%94%A8%EF%BC%81%E5%B0%B1%E8%97%8F%E5%9C%A8%E4%BD%A0%E6%AF%8F%E5%A4%A9%E5%90%83%E7%9A%84%E9%A3%9F%E7%89%A9%E9%87%8C" target="_blank">It kills half a million people  each year and have been called off by WHO! And it is hidden in the food you eat every day.
+</a></div>
+                                    </td>
+                                    <td width="15%">Repeat Number：19</td>
+                                    <td width="15%" style="text-align:right;">Data：2018-12-25</td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>大家都知道，油吃多了没好处，毁心脏又毁血管，但是，在很多食品中还有一种常见物质，“吃一口就等于吃了7口油！” 这个害人不浅的东西，就叫：反式脂肪！ 世界卫生组织发布呼吁各国：5年内彻底停用食品中的人造反式脂肪！ 据世卫组织估计，每年有超过50万例因心血管疾病引发的死亡案例与反式脂肪摄入有关。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>There is also a common substance in many foods. "Eating a bite of it means eating 7 bite of oils!" This substance is called trans fat! The World Health Organization has issued a call for countries to completely deactivate artificial trans fats in food within 5 years! According to WHO estimates, more than 500,000 deaths from cardiovascular disease each year are associated with trans fat intake.
+</div>
+                                    </td>
+                                </tr>
+                            </div>
+
+                            <div class="wechat-article-info">
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>3.&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E8%BF%995%E7%A7%8D%E9%A3%9F%E7%89%A9%E8%B6%85%E7%BA%A7%E4%BC%A4%E8%82%BE%EF%BC%81%E5%8D%B4%E5%A4%A9%E5%A4%A9%E9%83%BD%E5%90%83%EF%BC%8C%E8%B6%8A%E5%90%83%E7%A6%BB%E5%B0%BF%E6%AF%92%E7%97%87%E8%B6%8A%E8%BF%91%EF%BC%81" target="_blank">这5种食物超级伤肾！却天天都吃，越吃离尿毒症越近！</a></div>
+                                    </td>
+                                    <td width="15%">重复数：7</td>
+                                    <td width="15%" style="text-align:right;">日期：2018-12-25</td>
+                                </tr>
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>&nbsp;&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E8%BF%995%E7%A7%8D%E9%A3%9F%E7%89%A9%E8%B6%85%E7%BA%A7%E4%BC%A4%E8%82%BE%EF%BC%81%E5%8D%B4%E5%A4%A9%E5%A4%A9%E9%83%BD%E5%90%83%EF%BC%8C%E8%B6%8A%E5%90%83%E7%A6%BB%E5%B0%BF%E6%AF%92%E7%97%87%E8%B6%8A%E8%BF%91%EF%BC%81" target="_blank">These 5 kinds of food hurt the kidney! But people eat it every day. The more you eat, the closer you are to uremia!</a></div>
+                                    </td>
+                                    <td width="15%">Repeat Number：7</td>
+                                    <td width="15%" style="text-align:right;">Data：2018-12-25</td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>肾病患者需要低盐、低脂、高维生素饮食，但方便面则是反其道而行之，属于高盐、高脂、低维生素食物。 除高盐外，方便面中的人造脂肪(反式脂肪酸)，同样对心血管的伤害很大。 对了，方便面还有防腐剂和香精，伤害肝肾胃。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>Patients with kidney disease need a low-salt, low-fat, high-vitamin diet. But instant noodles are high-salt, high-fat, low-vitamin foods. In addition to high salt, artificial fat (trans fatty acids) in instant noodles is also very harmful to the cardiovascular. In addition, instant noodles also have preservatives and flavors that damage the liver, kidney and stomach.</div>
+                                    </td>
+                                </tr>
+                            </div>
+
+                            <div class="wechat-article-info">
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>4.&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E8%BF%994%E7%B1%BB%E9%A3%9F%E7%89%A9%EF%BC%8C%E6%98%AF%E6%96%B0%E7%94%9F%E5%84%BF%E9%BB%84%E7%96%B8%E7%9A%84%E2%80%9C%E5%B8%AE%E5%87%B6%E2%80%9D%EF%BC%8C%E5%91%B3%E9%81%93%E5%86%8D%E5%A5%BD%EF%BC%8C%E5%AD%95%E5%A6%88%E4%B9%9F%E8%A6%81%E5%B0%91%E5%90%83" target="_blank">这4类食物，是新生儿黄疸的“帮凶”，味道再好，孕妈也要少吃</a></div>
+                                    </td>
+                                    <td width="15%">重复数：4</td>
+                                    <td width="15%" style="text-align:right;">日期：2018-12-25</td>
+                                </tr>
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>&nbsp;&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E8%BF%994%E7%B1%BB%E9%A3%9F%E7%89%A9%EF%BC%8C%E6%98%AF%E6%96%B0%E7%94%9F%E5%84%BF%E9%BB%84%E7%96%B8%E7%9A%84%E2%80%9C%E5%B8%AE%E5%87%B6%E2%80%9D%EF%BC%8C%E5%91%B3%E9%81%93%E5%86%8D%E5%A5%BD%EF%BC%8C%E5%AD%95%E5%A6%88%E4%B9%9F%E8%A6%81%E5%B0%91%E5%90%83" target="_blank">These four types of food are the "accomplice" of neonatal jaundice. Even if it tastes good, pregnant mothers should eat less.</a></div>
+                                    </td>
+                                    <td width="15%">Repeat Number：4</td>
+                                    <td width="15%" style="text-align:right;">Data：2018-12-25</td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>油炸、油性和快餐含有大量的饱和脂肪和反式脂肪，很难消化，尤其是那些用部分氢化植物油制作的食品。一些乳制品，包括奶酪、全脂牛奶和全脂酸奶，也含有高水平的饱和脂肪。 研究人员并不完全确定原因，但研究表明，摄入大量饱和脂肪和反式脂肪的准妈妈，宝宝患黄疸的几率也增加。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>Deep-fried, oily and fast foods contain large amounts of saturated and trans fats that are difficult to digest, especially those made from partially hydrogenated vegetable oils. Some dairy products, including cheese, whole milk and full-fat yogurt, also contain high levels of saturated fat. The researchers are not completely sure of the cause. But studies have shown that pregnant women who consume large amounts of saturated fat and trans fats increase their chances of developing jaundice.
+</div>
+                                    </td>
+                                </tr>
+                            </div>
+
+                            <div class="wechat-article-info">
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>5.&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E6%AF%8F%E5%B9%B4%E8%87%B4%E6%AD%BB50%E4%B8%87%E4%BA%BA%EF%BC%8C%E5%B7%B2%E8%A2%AB%E4%B8%96%E5%8D%AB%E7%BB%84%E7%BB%87%E5%91%BC%E5%90%81%E5%81%9C%E7%94%A8%EF%BC%81%E5%B0%B1%E8%97%8F%E5%9C%A8%E6%88%91%E4%BB%AC%E6%AF%8F%E5%A4%A9%E5%90%83%E7%9A%84%E9%A3%9F%E7%89%A9%E9%87%8C...." target="_blank">每年致死50万人，已被世卫组织呼吁停用！就藏在我们每天吃的食物里....</a></div>
+                                    </td>
+                                    <td width="15%">重复数：4</td>
+                                    <td width="15%" style="text-align:right;">日期：2018-12-25</td>
+                                </tr>
+                                <tr style="padding-top:10px;">
+                                    <td width="70%" class="h3">
+                                        <div>&nbsp;&nbsp;<a href="https://weixin.sogou.com/weixin?type=2&query=%E6%AF%8F%E5%B9%B4%E8%87%B4%E6%AD%BB50%E4%B8%87%E4%BA%BA%EF%BC%8C%E5%B7%B2%E8%A2%AB%E4%B8%96%E5%8D%AB%E7%BB%84%E7%BB%87%E5%91%BC%E5%90%81%E5%81%9C%E7%94%A8%EF%BC%81%E5%B0%B1%E8%97%8F%E5%9C%A8%E6%88%91%E4%BB%AC%E6%AF%8F%E5%A4%A9%E5%90%83%E7%9A%84%E9%A3%9F%E7%89%A9%E9%87%8C...." target="_blank">It kills half a million people  each year and have been called off by WHO! And it is hidden in the food you eat every day.
+</a></div>
+                                    </td>
+                                    <td width="15%">Repeat Number：4</td>
+                                    <td width="15%" style="text-align:right;">Data：2018-12-25</td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>反式脂肪又称反式脂肪酸，是一大类含有反式双键的脂肪酸的简称。它分为两类。 第一类是天然反式脂肪，主要存在于牛羊肉和牛奶等奶制品中。 这类天然的反式脂肪不但对人体没什么害处，还有部分研究显示其可减少脂肪堆积，因此可以放心食用。 第二类则是人造反式脂肪，主要来源于处理不完全的氢化植物油，一般在油脂的加工烹调中产生。</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="bgborder" bgcolor="#E9E9E9" style="padding:10px 10px 10px 10px;"
+                                        colspan="4">
+                                        <div>Trans fats, also known as trans fatty acids, are short for a large group of fatty acids containing trans double bonds. It falls into two categories. The first is natural trans fats, which are mainly found in dairy products such as beef, mutton and milk. These natural trans fats are not only harmless to the human body, but also some studies have shown that they can reduce fat accumulation, so they can be safely eaten. The second category is artificial trans fats, mainly from incompletely treated hydrogenated vegetable oils, which are generally produced in the cooking of oils and fats.</div>
+                                    </td>
+                                </tr>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                    </tbody>
+                </table>
+                <img src="http://tobaccofreekids.meihua.info/InfoItemView.aspx?itemid=ad06b991-fcba-4638-9696-e0df9bd5ced0&amp;stat=true&amp;u=xi_yin"
+                     width="1" height="1" style="border:none;width:1px;height:1px;"><br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+<p style="background-color: #fff;height: 200px;"></p>
+
+<div style="margin-left:1%;padding:1px 16px;height:auto;margin-right:1%;margin-top:25px;" id="transfat_weibo">
+    <hr width=100% size=3 color=#000>
+    <h1 align="center">反式脂肪酸-微博<br>Transfat - Weibo</h1>
+    <hr width=100% size=3 color=#000>
+    <div class="weibo_header">
+        <p>2018-12-25，共检测到87条与“反式脂肪酸”相关的微博。</p>
+        <p>本页面列出转发量超过50的微博。</p>
+        <p>点击微博内容可查看微博原文。</p>
+        <p>There are 87 weibos about transfat reduction monitored on 2018-12-25.</p>
+        <p>Weibos whose repost number is greater than 50 are listed in this page. </p>
+        <p>Click the content of each weibo, and you can see the detail imformation. </p>
+        <p>下图展示了最近30天的数据获取量。</p>
+        <p>The following figure shows the amount of data acquired in the last 30 days.</p>
+    </div>
+
+    <div id="transfat_weibo_chart" style="width: 100%;height:400px;margin:0 auto;"></div>
+
+    <script type="text/javascript">
+        var dom = document.getElementById("transfat_weibo_chart");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        app.title = '反式脂肪酸微博数据趋势图';
+
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: [
+                    'male 男性',
+                    'female 女性'
+                ]
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisLabel: {
+                        interval: 0,
+                        rotate: 40
+                    },
+                    data: ["2018-11-26", "2018-11-27", "2018-11-28", "2018-11-29", "2018-11-30", "2018-12-01", "2018-12-02", "2018-12-03", "2018-12-04", "2018-12-05", "2018-12-06", "2018-12-07", "2018-12-08", "2018-12-09", "2018-12-10", "2018-12-11", "2018-12-12", "2018-12-13", "2018-12-14", "2018-12-15", "2018-12-16", "2018-12-17", "2018-12-18", "2018-12-19", "2018-12-20", "2018-12-21", "2018-12-22", "2018-12-23", "2018-12-24", "2018-12-25"]
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: 'male 男性',
+                    type: 'bar',
+                    stack: '数量',
+                    data: [36, 28, 14, 33, 25, 24, 41, 26, 44, 26, 18, 19, 27, 28, 35, 31, 37, 25, 28, 47, 46, 30, 43, 50, 33, 20, 31, 38, 36, 27]
+                },
+                {
+                    name: 'female 女性',
+                    type: 'bar',
+                    stack: '数量',
+                    data: [68, 53, 35, 51, 56, 33, 45, 36, 65, 121, 50, 37, 38, 26, 67, 42, 59, 42, 49, 61, 73, 55, 73, 141, 39, 66, 61, 88, 78, 60]
+                },
+            ]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    </script>
+
+
+    <div>
+        <span style="width: 370px; background:#666;color:#fff;font-weight:bold;padding:2px 3px;display:inline-block;margin-top:1.5em;text-align: center">
+            热门微博 <br> Hot Weibos
+        </span>
+
+        <ol class="weibo_content">
+                       <li>
+
+                <div class="percon">
+                    <a style="color:black;text-align: left" target="_blank">
+                        没有相关微博！
+                    </a>
+                </div>
+                <div class="percon">
+                    <a style="color:black;text-align: left">
+                        No such weibos!
+                    </a>
+                </div>
+            </li>
+        </ol>
+
+    </div>
+    
+    <div style="height: 80px"></div>
+</div>
+
+
+</body>
+</html>

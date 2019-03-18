@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>login</title>
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="login">
+            {% csrf_token %}
+            <p style="font-weight: bold;font-size: 20px">登录系统</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>username:</td>
+                        <td><input type="text" name="username"/></td>
+                    </tr>
+                    <tr>
+                        <td>password:</td>
+                        <td><input type="password" name="password"/></td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <button type="submit">登录</button>
+            <span style="color: darkred;font-size: 10px">&nbsp&nbsp&nbsp{{ flag }}</span>
+        </form>
+    </div>
+</body>
+</html>

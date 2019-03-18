@@ -1,0 +1,428 @@
+<div style="margin-left:1%;padding:1px 16px;height:auto;margin-right:1%;margin-top:25px;">
+  <hr width=100% size=3 color=#000>
+  <h1 align="center">减盐-新闻
+    <br>Salt Reduction - News</h1>
+  <hr width=100% size=3 color=#000>
+  <div class="weibo_header">
+    <p>今日（#date#）共监测到#news_num#条资讯。请点击标题查看原文。</p>
+    <p>There are #news_num# articles monitored today #date#. Please click the title to view full information.</p>
+    <p>The original article is in Chinese only.</p>
+  </div>
+  <div id="salt_news_container" style="width: 600px;height:400px;margin:0 auto;"></div>
+  <script type="text/javascript">var dom = document.getElementById("salt_news_container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    app.title = "减盐新闻柱状图";
+    option = {
+      tooltip: {
+        trigger: "axis",
+        axisPointer: {
+          type: "shadow"
+        }
+      },
+      legend: {
+        data: ["advocated（提倡）", "against（反对）", "neutrality（中立）"],
+      },
+      grid: {
+        left: "3%",
+        right: "4%",
+        bottom: "3%",
+        top: "20%",
+        containLabel: true
+      },
+      xAxis: [{
+        type: "category",
+        data: ["government(政府)", "enterprise(企业)", "public(公众)"]
+      }],
+      yAxis: [{
+        type: "value"
+      }],
+      series: [{
+        name: "advocated（提倡）",
+        type: "bar",
+        stack: "提倡",
+        data: #ad_list#
+      },
+      {
+        name: "against（反对）",
+        type: "bar",
+        stack: "反对",
+        data: #ag_list#
+      },
+      {
+        name: "neutrality（中立）",
+        type: "bar",
+        stack: "中立",
+        data: #ne_list#
+      }]
+    };
+    if (option && typeof option === "object") {
+      myChart.setOption(option, true);
+    }</script>
+  <div>
+    <h2>山东
+      <br>Shandong</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab1">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">食物中的钠
+                      <br>Sodium in food</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_shandong_swzdn#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">高血压
+                      <br>Hypertension</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_shandong_gxy#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">心血管健康
+                      <br>Cardiovascular health</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_shandong_xxgjk#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">综合健康信息
+                      <br>Comprehensive Health Information</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_shandong_jkzx#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_shandong_jxgc#      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>河南
+      <br>Henan</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab1">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">食物中的钠
+                      <br>Sodium in food</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_henan_swzdn#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">高血压
+                      <br>Hypertension</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_henan_gxy#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">心血管健康
+                      <br>Cardiovascular health</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_henan_xxgjk#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">综合健康信息
+                      <br>Comprehensive Health Information</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_henan_jkzx#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_henan_jxgc#      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>安徽
+      <br>Anhui</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab1">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">食物中的钠
+                      <br>Sodium in food</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_anhui_swzdn#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">高血压
+                      <br>Hypertension</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_anhui_gxy#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">心血管健康
+                      <br>Cardiovascular health</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_anhui_xxgjk#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">综合健康信息
+                      <br>Comprehensive Health Information</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_anhui_jkzx#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_anhui_jxgc#      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>浙江
+      <br>Zhejiang</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab1">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">食物中的钠
+                      <br>Sodium in food</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_zhejiang_swzdn#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">高血压
+                      <br>Hypertension</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_zhejiang_gxy#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">心血管健康
+                      <br>Cardiovascular health</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_zhejiang_xxgjk#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">综合健康信息
+                      <br>Comprehensive Health Information</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_zhejiang_jkzx#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_zhejiang_jxgc#      </tbody>
+    </table>
+  </div>
+  <div>
+    <h2>其他省份
+      <br>Other Provinces</h2>
+    <table width="100%" border="0" cellspacing="3" cellpadding="0" id="tab1">
+      <tbody>
+        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">食物中的钠
+                      <br>Sodium in food</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_other_swzdn#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">高血压
+                      <br>Hypertension</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_other_gxy#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">心血管健康
+                      <br>Cardiovascular health</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_other_xxgjk#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">综合健康信息
+                      <br>Comprehensive Health Information</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_other_jkzx#        <tr>
+          <td>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td bgcolor="#666666" align="center" width="370" class="WhiteRow" style="padding:2px 2px 2px 2px;color:#ffffff;">
+                    <b style="color:#ffffff;">决心工程
+                      <br>Resolve To Save Lives</b></td>
+                  <td colspan="2">&nbsp;</td></tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+#articles_other_jxgc#      </tbody>
+    </table>
+  </div>
+</div>

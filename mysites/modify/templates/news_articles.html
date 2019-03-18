@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>新闻</title>
+    <style type="text/css">
+        table{
+            width: 100%;
+            table-layout: fixed;
+        }
+        .title{width: 30%;}
+        .content{width: 70%;}
+    </style>
+    <script language="javascript">
+        function check(form, type) {
+            var sure = confirm("是否确定修改?");
+            if(sure==true){
+                if(type == "next") {
+                    return true;
+                }else {
+                    if (form.news_subject.value != "" && form.content_type.value != "" && form.attitude.value != "" && form.province.value != "" && form.abstr.value != "") {
+                        return true;
+                    }else{
+                        alert("请填写所有信息再提交！")
+                        return false;
+                    }
+                }
+            }else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p style="font-size: 18px;font-weight: bolder">{{ date }} -- 新闻：&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ remain }}&nbsp left</p>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            <tbody>
+                <tr>
+                    <td class="title" height="40px">标题:</td>
+                    <td class="content" title="{{ article.title }}">{{ article.title }}</td>
+                </tr>
+                <tr>
+                    <td height="40px">来源:</td>
+                    <td>{{ article.source }}</td>
+                </tr>
+                <tr>
+                    <td height="40px">关键字:</td>
+                    <td>{{ article.keyword }}</td>
+                </tr>
+                <tr>
+                    <td>内容:</td>
+                    <td>
+                        <span id="content" style="display: none;">{{ article.content }}</span>
+                        <a href="" id="btn"></a>
+                        <script type="text/javascript">
+                            var btn=document.getElementById('btn');
+                            var content=document.getElementById('content');
+                            var str=content.innerHTML;
+                            var onOff=false;
+                            content.innerHTML = str.substr(0, 60) + "......";
+                            content.style.display = 'block';
+                            btn.innerHTML = '>>>展开';
+                            btn.onclick=function() {
+                                if (onOff) {
+                                    content.innerHTML = str.substr(0, 60) + "......";
+                                    content.style.display = 'block';
+                                    btn.innerHTML = '>>>展开'
+                                } else {
+                                    content.innerHTML = str;
+                                    btn.innerHTML = '<<<收缩';
+                                }
+                                onOff = !onOff;
+                                return false;
+                            }
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="40px">新闻主题:</td>
+                    <td>
+                        <label><input name="news_subject" type="radio" value="政府" />政府</label>
+                        <label><input name="news_subject" type="radio" value="企业" />企业</label>
+                        <label><input name="news_subject" type="radio" value="公众" />公众</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="40px">内容标签:</td>
+                    <td>
+                        <label><input name="content_type" type="radio" value="食物中的钠" />食物中的钠</label>
+                        <label><input name="content_type" type="radio" value="综合健康信息" />综合健康信息</label>
+                        <label><input name="content_type" type="radio" value="高血压" />高血压</label>
+                        <label><input name="content_type" type="radio" value="心血管健康" />心血管健康</label>
+                        <label><input name="content_type" type="radio" value="决心工程" />决心工程</label>
+                        <label><input name="content_type" type="radio" value="反式脂肪酸" />反式脂肪酸</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="40px">态度标签:</td>
+                    <td>
+                        <label><input name="attitude" type="radio" value="提倡" />提倡</label>
+                        <label><input name="attitude" type="radio" value="中立" />中立</label>
+                        <label><input name="attitude" type="radio" value="反对" />反对</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="40px">省份:</td>
+                    <td>
+                        <label><input name="province" type="radio" value="山东" />山东</label>
+                        <label><input name="province" type="radio" value="河南" />河南</label>
+                        <label><input name="province" type="radio" value="浙江" />浙江</label>
+                        <label><input name="province" type="radio" value="安徽" />安徽</label>
+                        <label><input name="province" type="radio" value="其他" />其他</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>摘要:</td>
+                    <td><textarea rows="5" style="width:100%" name="abstr"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+        <input name="date" style="display: none" value="{{ date }}"/>
+        <input name="id" style="display: none" value="{{ article.id }}"/>
+        <input name="title" style="display: none" value="{{ article.title }}"/>
+        <input name="source" style="display: none" value="{{ article.source }}"/>
+        <input type="submit" style="width: 100px;height: 30px;font-size: larger" name="submit" onclick='return check(this.form, "submit")' value="submit"/>
+        <input type="submit" style="width: 100px;height: 30px;font-size: larger" name="submit" onclick='return check(this.form, "next")' value="next"/>
+    </form>
+</body>
+</html>

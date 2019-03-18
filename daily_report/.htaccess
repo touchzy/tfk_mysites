@@ -1,0 +1,4 @@
+AuthName "sys"
+AuthType Basic
+AuthUserFile /var/www/html/daily_report/.htpasswd
+require user report_viewer

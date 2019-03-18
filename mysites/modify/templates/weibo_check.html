@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>核对</title>
+    <script language="javascript">
+        function copy() {
+            var abstr_en = document.getElementById("content_en");
+            abstr_en.select();
+            document.execCommand("Copy")
+        }
+        function check(form){
+            var sure = confirm("是否确定提交?");
+            if(sure==true){
+                if(form.content_en.value != "")
+                    return true;
+                else {
+                    alert("请填写翻译！");
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p style="font-size: 18px;font-weight: bolder">{{ date }}：</p>
+    <table width="100%">
+        <tbody>
+            <tr>
+                <td width="10%" style="font-size: 18px;font-weight: bolder">内容</td>
+                <td width="90%">{{ article.content }}</td>
+            </tr>
+            <tr>
+                <td><br/></td>
+            </tr>
+            <tr>
+                <td style="font-size: 18px;font-weight: bolder;">机器翻译</td>
+                <td>
+                    <textarea id="content_en" rows="10" readonly="readonly" style="border: none;font-size: 18px;width:100%">{{ article.content_en }}</textarea>
+                    <button class="btn" onclick="copy()">复制</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <p style="font-size: 18px;font-weight: bolder">输入翻译：</p>
+    <form method="post">
+        {% csrf_token %}
+        <input style="display: none;" value="{{ article.id }}" name="id"/>
+        <input style="display: none;" value="{{ date }}" name="date"/>
+        <input style="display: none;" value="weibo" name="type"/>
+        <textarea rows="8" style="width:100%;font-size: 18px" name="content_en"></textarea>
+        <input type="submit" style="width: 100px;height: 30px;font-size: larger" onclick="return check(this.form)" value="submit"/>
+    </form>
+</body>
+</html>

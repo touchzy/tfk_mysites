@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>login</title>
+    <link rel="stylesheet" href="{% static "layui/css/layui.css" %}">
+    <link rel="stylesheet" href="{% static "layui/css/login.css" %}">
+    <script>
+        function la(type) {
+            document.getElementById('language').value=(type);
+            document.getElementById('tag').value=true;
+            document.data.submit();
+        }
+        function login() {
+            document.getElementById('tag').value=('');
+            document.data.action="home";
+            document.data.submit();
+        }
+    </script>
+</head>
+<body>
+    <script src="{% static "layui/layui.js" %}"></script>
+    <form class="layui-form" method="post" action="login" name="data">
+        {% csrf_token %}
+        <div class="main-login" style="float: left;">
+            <input id="language" name="language" style="display: none" value="{{ language }}"/>
+            <input id="tag" name="tag" style="display: none"/>
+            <span id="head" class="main-login-head" style="font-weight: bold;font-size: 20px;color: #1E9FFF;">登录系统</span>
+            <div class="main-login-input">
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-username" style="font-size: 20px; color: #1E9FFF;"></i>
+                    <div class="layui-inline">
+                      <input id="account" type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <i class="layui-icon layui-icon-password" style="font-size: 20px; color: #1E9FFF;"></i>
+                    <div class="layui-inline">
+                      <input id="password" type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="main-login-button">
+                <button id="sign_in" class="layui-btn layui-btn-normal layui-btn-sm" style="width:200px;font-size: 15px;margin-left:6px" onclick="login()">登录</button>
+                <span id="flag" style="color: darkred;font-size: 10px;margin-left: -4px;margin-top: 6px">&nbsp&nbsp&nbsp{{ flag }}</span>
+            </div>
+            <script>
+                if('{{ language }}' == "English"){
+                    document.getElementById("head").innerText = "Sign In";
+                    document.getElementById("account").placeholder = "Enter your username";
+                    document.getElementById("password").placeholder = "Enter your password";
+                    document.getElementById("sign_in").innerText = 'Login';
+                    if('{{ flag }}') {
+                        document.getElementById("flag").style.marginLeft = '6px';
+                        document.getElementById("flag").innerText = 'username or password error!';
+                    }
+                }
+            </script>
+        </div>
+        <div style="margin-left:90%;margin-top:2%;float: left;z-index:1">
+            <span class="layui-breadcrumb" lay-separator="|">
+                <a id="cn" onclick="la('Chinese')" style="cursor:pointer">中文</a>
+                <a id="en" onclick="la('English')" style="cursor:pointer">English</a>
+            </span>
+        </div>
+        <script>
+            layui.use('element', function(){
+                let element = layui.element;
+                element.init()
+            });
+        </script>
+    </form>
+</body>
+</html>

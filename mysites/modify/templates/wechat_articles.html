@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>微信</title>
+    <style type="text/css">
+        table{
+            width: 100%;
+            table-layout: fixed;
+        }
+        .title{width: 30%;}
+        .content{width: 70%;}
+    </style>
+    <script language="javascript">
+        function check(form, type) {
+            var sure = confirm("是否确定修改?");
+            if(sure==true){
+                if(type == "next") {
+                    return true;
+                }else {
+                    if (form.abstr.value != "") {
+                        return true;
+                    }else{
+                        alert("请填写所有信息再提交！")
+                        return false;
+                    }
+                }
+            }else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p style="font-size: 18px;font-weight: bolder">{{ date }} -- 微信：</p>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            <tbody>
+                <tr>
+                    <td class="title" height="40px">标题:</td>
+                    <td class="content" title="{{ article.title }}">{{ article.title }}</td>
+                </tr>
+                <tr>
+                    <td height="40px">关键字:</td>
+                    <td>{{ article.keyword }}</td>
+                </tr>
+                <tr>
+                    <td height="40px">重复:</td>
+                    <td>{{ article.repeat_num }}</td>
+                </tr>
+                <tr>
+                    <td>内容:</td>
+                    <td>
+                        <span id="content">{{ article.content }}</span>
+{#                        <a href="" id="btn"></a>#}
+{#                        <script type="text/javascript">#}
+{#                            var btn=document.getElementById('btn');#}
+{#                            var content=document.getElementById('content');#}
+{#                            var str=content.innerHTML;#}
+{#                            var onOff=false;#}
+{#                            content.innerHTML = str.substr(0, 60) + "......";#}
+{#                            content.style.display = 'block';#}
+{#                            btn.innerHTML = '>>>展开';#}
+{#                            btn.onclick=function() {#}
+{#                                if (onOff) {#}
+{#                                    content.innerHTML = str.substr(0, 60) + "......";#}
+{#                                    content.style.display = 'block';#}
+{#                                    btn.innerHTML = '>>>展开'#}
+{#                                } else {#}
+{#                                    content.innerHTML = str;#}
+{#                                    btn.innerHTML = '<<<收缩';#}
+{#                                }#}
+{#                                onOff = !onOff;#}
+{#                                return false;#}
+{#                            }#}
+{#                        </script>#}
+                    </td>
+                </tr>
+                <tr>
+                    <td>摘要:</td>
+                    <td><textarea rows="5" style="width:100%" name="abstr"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+        <input name="date" style="display: none" value="{{ date }}"/>
+        <input name="id" style="display: none" value="{{ article.id }}"/>
+        <input name="title" style="display: none" value="{{ article.title }}"/>
+        <input name="subject" style="display: none" value="{{ article.subject }}"/>
+        <input type="submit" style="width: 100px;height: 30px;font-size: larger" name="submit" onclick='return check(this.form, "submit")' value="submit"/>
+        <input type="submit" style="width: 100px;height: 30px;font-size: larger" name="submit" onclick='return check(this.form, "next")' value="next"/>
+    </form>
+</body>
+</html>

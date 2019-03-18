@@ -1,0 +1,93 @@
+<div style="margin-left:1%;padding:1px 16px;height:auto;margin-right:1%;margin-top:25px;" id="#subject#_weibo">
+    <hr width=100% size=3 color=#000>
+    <h1 align="center">#title_cn#-微博<br>#title_en# - Weibo</h1>
+    <hr width=100% size=3 color=#000>
+    <div class="weibo_header">
+        <p>#created_date#，共检测到#weibo_count#条与“#subject_cn#”相关的微博。</p>
+        <p>本页面列出转发量超过50的微博。</p>
+        <p>点击微博内容可查看微博原文。</p>
+        <p>There are #weibo_count# weibos about #subject_en# monitored on #created_date#.</p>
+        <p>Weibos whose repost number is greater than 50 are listed in this page. </p>
+        <p>Click the content of each weibo, and you can see the detail imformation. </p>
+        <p>下图展示了最近30天的数据获取量。</p>
+        <p>The following figure shows the amount of data acquired in the last 30 days.</p>
+    </div>
+
+    <div id="#subject#_weibo_chart" style="width: 100%;height:400px;margin:0 auto;"></div>
+
+    <script type="text/javascript">
+        var dom = document.getElementById("#subject#_weibo_chart");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        app.title = '#subject_cn#微博数据趋势图';
+
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: [
+                    'male 男性',
+                    'female 女性'
+                ]
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisLabel: {
+                        interval: 0,
+                        rotate: 40
+                    },
+                    data: #date_list#
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: 'male 男性',
+                    type: 'bar',
+                    stack: '数量',
+                    data: #male_counts#
+                },
+                {
+                    name: 'female 女性',
+                    type: 'bar',
+                    stack: '数量',
+                    data: #female_counts#
+                },
+            ]
+        };
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    </script>
+
+
+    <div>
+        <span style="width: 370px; background:#666;color:#fff;font-weight:bold;padding:2px 3px;display:inline-block;margin-top:1.5em;text-align: center">
+            热门微博 <br> Hot Weibos
+        </span>
+
+        <ol class="weibo_content">
+            #hot_weibo_content#
+        </ol>
+
+    </div>
+    
+    <div style="height: 80px"></div>
+</div>

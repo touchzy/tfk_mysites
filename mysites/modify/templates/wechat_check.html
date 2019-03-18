@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>核对</title>
+    <script language="javascript">
+        function check(form){
+            var sure = confirm("是否确定提交?");
+            if(sure==true){
+                if(form.title_en.value != "" && form.abstr_en.value != "")
+                    return true;
+                else {
+                    alert("请输入所有翻译！");
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <p style="font-size: 18px;font-weight: bolder">{{ date }}：</p>
+    <form method="post">
+        {% csrf_token %}
+        <table width="100%">
+            <tbody>
+                <tr>
+                    <td width="10%" style="font-size: 18px;font-weight: bolder">标题</td>
+                    <td width="90%">{{ article.title }}</td>
+                </tr>
+                <tr>
+                    <td><br/></td>
+                </tr>
+                <tr>
+                    <td style="font-size: 18px;font-weight: bolder;">机器翻译</td>
+                    <td>
+                        <textarea id="title_en_m" rows="2" readonly="readonly" style="border: none;font-size: 18px;width:100%">{{ article.title_en }}</textarea>
+                        <a href="" id="title">复制</a>
+                        <script type="text/javascript">
+                            var btn=document.getElementById("title");
+                            btn.onclick=function() {
+                                copy = document.getElementById("title_en_m");
+                                copy.select();
+                                document.execCommand("Copy");
+                                return false;
+                            }
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 18px;font-weight: bolder;">输入翻译</td>
+                    <td><textarea rows="2" style="width:100%;font-size: 18px" name="title_en"></textarea></td>
+                </tr>
+                <tr>
+                    <td style="font-size: 18px;font-weight: bolder">中文摘要</td>
+                    <td>{{ article.abstract_cn }}</td>
+                </tr>
+                <tr>
+                    <td><br/></td>
+                </tr>
+                <tr>
+                    <td style="font-size: 18px;font-weight: bolder;">机器翻译</td>
+                    <td>
+                        <textarea id="abstr_en_m" rows="10" readonly="readonly" style="border: none;font-size: 18px;width:100%">{{ article.abstract_en }}</textarea>
+                        <a href="" id="abstr">复制</a>
+                        <script type="text/javascript">
+                            var btn=document.getElementById("abstr");
+                            btn.onclick=function() {
+                                copy = document.getElementById("abstr_en_m");
+                                copy.select();
+                                document.execCommand("Copy");
+                                return false;
+                            }
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 18px;font-weight: bolder;">输入翻译</td>
+                    <td><textarea rows="8" style="width:100%;font-size: 18px" name="abstr_en"></textarea></td>
+                </tr>
+            </tbody>
+        </table>
+        <input style="display: none;" value="{{ article.id }}" name="id"/>
+        <input style="display: none;" value="{{ date }}" name="date"/>
+        <input style="display: none;" value="wechat" name="type"/>
+        <input type="submit" style="width: 100px;height: 30px;font-size: larger" onclick="return check(this.form)" value="submit"/>
+    </form>
+</body>
+</html>

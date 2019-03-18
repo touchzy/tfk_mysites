@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Index</title>
+    <script>
+        function wechat(){
+            document.getElementById("hh").style.display="block";
+            document.date_info.action="wechat";
+            document.date_info.submit();
+        }
+        function weibo() {
+            document.getElementById("hh").style.display="block";
+            document.date_info.action="weibo";
+            document.date_info.submit();
+        }
+        function news() {
+            document.getElementById("hh").style.display="block";
+            document.date_info.action="news";
+            document.date_info.submit();
+        }
+        function abstr(type) {
+            document.getElementById("hh").style.display="block";
+            document.getElementById("type").value=(type);
+            document.date_info.action="check";
+            document.date_info.submit();
+        }
+        function html(type) {
+            document.getElementById("hh").style.display="block";
+            document.getElementById("type").value=(type);
+            document.date_info.action="html";
+            document.date_info.submit();
+        }
+        function report() {
+            document.getElementById("hh").style.display="block";
+            document.date_info.action="report";
+            document.date_info.submit();
+        }
+        function upload() {
+            if(document.upload_file.upload.value != "") {
+                document.getElementById("hh").style.display = "block";
+                document.upload_file.action = "upload";
+                document.upload_file.submit();
+            }else{
+                alert("请先选择pdf文件！")
+            }
+        }
+        function string() {
+            document.getElementById("hh").style.display="block";
+            document.send_mail.action="string";
+            document.send_mail.submit();
+        }
+        function send() {
+            if(document.send_mail.mail_content.value != "") {
+                document.getElementById("hh").style.display = "block";
+                document.send_mail.action = "send";
+                document.send_mail.submit();
+            }else{
+                alert("请先输入邮件内容！")
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="" method="get" name="date_info">
+        <p style="font-size: 18px;font-weight: bolder">当前默认日期：&nbsp&nbsp&nbsp<input name="date" id="get_date" readonly="readonly" style="border: none;font-size: 18px;font-weight: bolder"/></p>
+        <p>自定义日期：&nbsp&nbsp&nbsp<input type="date" name="custom_date" id="custom"/></p>
+        <script language="JavaScript">
+            var now = new Date();
+            now.setTime(now.getTime()-24*60*60*1000);
+            var day = ("0" + now.getDate()).slice(-2);
+            var month = ("0" + (now.getMonth() + 1)).slice(-2);
+            var today = now.getFullYear()+"-"+(month)+"-"+(day);
+            document.getElementById("get_date").value=(today);
+        </script>
+        <input id="type" name="type" style="display: none"/>
+        <div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td width="40px" style="font-size: 16px;font-weight: bolder">微信</td>
+                        <td width="40px"><a href="#" onclick="wechat()">筛选</a></td>
+                        <td width="70px"><a href="#" onclick="abstr('wechat')">核对翻译</a></td>
+                        <td width="70px"><a href="#" onclick="html('wechat')">生成Html</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 16px;font-weight: bolder">微博</td>
+                        <td><a href="#" onclick="weibo()">筛选</a></td>
+                        <td><a href="#" onclick="abstr('weibo')">核对翻译</a></td>
+                        <td><a href="#" onclick="html('weibo')">生成Html</a></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 16px;font-weight: bolder">新闻</td>
+                        <td><a href="#" onclick="news()">筛选</a></td>
+                        <td><a href="#" onclick="abstr('news')">核对翻译</a></td>
+                        <td><a href="#" onclick="html('news')">生成Html</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br/>
+        <a href="#" onclick="report()">生成总日报</a>
+        <br/><br/>
+    </form>
+    <form action="" method="post" name="upload_file" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="upload"/>
+        <a href="#" onclick="upload()">上传pdf</a>
+        <br/><br/>
+    </form>
+    <form action="" method="post" name="send_mail" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input name="date" id="email_date" style="display: none"/>
+        <script>
+            var date = document.getElementById("get_date").value;
+            document.getElementById("email_date").value=date;
+        </script>
+        <p style="font-size: 18px;font-weight: bolder">邮件内容：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="font-size: 15px" href="#" onclick="string()" >获取内容</a></p>
+        <textarea id="show_string" rows="6" style="width: 500px; display: none" name="mail_content">{{ string }}</textarea>
+        <br/>
+        <a id="send_email" href="#" onclick="send()" style="display: none">发送邮件</a>
+        <script>
+            if(document.getElementById("show_string").value != ""){
+                document.getElementById("show_string").style.display = "block";
+                document.getElementById("send_email").style.display = "none"
+            }
+        </script>
+    </form>
+    <br/>
+    <svg version="1.1" id="hh" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" width="20px" height="20px" style="display: none">
+        <path fill="#000" d="M31.6,3.5C5.9,13.6-6.6,42.7,3.5,68.4c10.1,25.7,39.2,38.3,64.9,28.1l-3.1-7.9c-21.3,8.4-45.4-2-53.8-23.3c-8.4-21.3,2-45.4,23.3-53.8L31.6,3.5z" transform="rotate(142.134 50 50)">
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="2s" from="0 50 50" to="360 50 50" repeatCount="indefinite"></animateTransform>
+        </path>
+        <path fill="#000" d="M42.3,39.6c5.7-4.3,13.9-3.1,18.1,2.7c4.3,5.7,3.1,13.9-2.7,18.1l4.1,5.5c8.8-6.5,10.6-19,4.1-27.7c-6.5-8.8-19-10.6-27.7-4.1L42.3,39.6z" transform="rotate(-284.268 50 50)">
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="-360 50 50" repeatCount="indefinite"></animateTransform>
+        </path>
+        <path fill="#000" d="M82,35.7C74.1,18,53.4,10.1,35.7,18S10.1,46.6,18,64.3l7.6-3.4c-6-13.5,0-29.3,13.5-35.3s29.3,0,35.3,13.5L82,35.7z" transform="rotate(142.134 50 50)">
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="2s" from="0 50 50" to="360 50 50" repeatCount="indefinite"></animateTransform>
+        </path>
+    </svg>
+</body>
+</html>
