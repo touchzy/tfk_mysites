@@ -450,11 +450,17 @@ def get_counts(date, type):
     if type == "wechat":
         salt_counts = []
         fat_counts = []
-        while d <= ed:
+        daily_counts = Daily_count.objects(_id__gte=str(d))
+        for count in daily_counts:
             date_list.append(str(d))
-            salt_counts.append(Wechat_articles.objects(post_date=str(d), subject="1").count())
-            fat_counts.append(Wechat_articles.objects(post_date=str(d), subject="2").count())
+            salt_counts.append(count.wechat_salt_count)
+            fat_counts.append(count.wechat_fat_count)
             d += one_day
+            if d == ed:
+                date_list.append(str(ed))
+                salt_counts.append(Wechat_articles.objects(post_date=str(ed), subject="1").count())
+                fat_counts.append(Wechat_articles.objects(post_date=str(ed), subject="2").count())
+                break
         return {"date_list": date_list, "salt_counts": salt_counts, "fat_counts": fat_counts}
     else:
         salt_male_counts = []

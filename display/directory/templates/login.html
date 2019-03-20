@@ -30,20 +30,20 @@
             <span id="head" class="main-login-head" style="font-weight: bold;font-size: 20px;color: #1E9FFF;">登录系统</span>
             <div class="main-login-input">
                 <div class="layui-form-item">
-                    <i class="layui-icon layui-icon-username" style="font-size: 20px; color: #1E9FFF;"></i>
-                    <div class="layui-inline">
+                    <i class="layui-icon layui-icon-username layui-inline" style="font-size: 20px; color: #1E9FFF; margin-left: 14%"></i>
+                    <div class="layui-inline" style="width: 60%; margin-left: 1%;">
                       <input id="account" type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <i class="layui-icon layui-icon-password" style="font-size: 20px; color: #1E9FFF;"></i>
-                    <div class="layui-inline">
+                    <i class="layui-icon layui-icon-password layui-inline" style="font-size: 20px; color: #1E9FFF; margin-left: 14%"></i>
+                    <div class="layui-inline" style="width: 60%; margin-left: 1%;">
                       <input id="password" type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
             <div class="main-login-button">
-                <button id="sign_in" class="layui-btn layui-btn-normal layui-btn-sm" style="width:200px;font-size: 15px;margin-left:6px" onclick="login()">登录</button>
+                <button id="sign_in" class="layui-btn layui-btn-normal layui-btn-sm" style="width:100%;font-size: 15px;" onclick="login()">登录</button>
                 <span id="flag" style="color: darkred;font-size: 10px;margin-left: -4px;margin-top: 6px">&nbsp&nbsp&nbsp{{ flag }}</span>
             </div>
             <script>
@@ -59,7 +59,7 @@
                 }
             </script>
         </div>
-        <div style="margin-left:90%;margin-top:2%;float: left;z-index:1">
+        <div style="margin-right:5%;margin-top:2%;float: right;z-index:1">
             <span class="layui-breadcrumb" lay-separator="|">
                 <a id="cn" onclick="la('Chinese')" style="cursor:pointer">中文</a>
                 <a id="en" onclick="la('English')" style="cursor:pointer">English</a>

@@ -9,28 +9,29 @@ html,body{
 }
 
 .main-login{
-    width: 220px;
+    width: 300px;
     height: 300px;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: -110px;
+    margin-left: -150px;
     margin-top: -150px;
 }
 
 .main-login-head{
     position: absolute;
     left: 50%;
-    margin-left: -48px;
+    margin-left: -45px;
 }
 
 .main-login-input{
-    position: absolute;
+    width: 300px;
     margin-top: 56px;
 }
 
 .main-login-button{
-    position: absolute;
-    margin-top: 180px;
+    width: 72%;
+    margin-top: 7%;
+    margin-left: 15%;
 }
 
