@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b4a1561-6afd-432d-ae1c-c4a829ceda8d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../display/.idea/display.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../display/.idea/display.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../display/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../display/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../display/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../display/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../display/directory/static/layui/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../display/directory/static/layui/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../display/directory/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/../display/directory/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modify/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/modify/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="8b4a1561-6afd-432d-ae1c-c4a829ceda8d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modify/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="471" column="53" lean-forward="true" selection-start-line="471" selection-start-column="53" selection-end-line="471" selection-end-column="53" />
+            <state relative-caret-position="73">
+              <caret line="484" column="57" lean-forward="true" selection-start-line="484" selection-start-column="57" selection-end-line="484" selection-end-column="57" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -375,12 +367,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1539928620303</updated>
-      <workItem from="1553062260168" duration="2007000" />
+      <workItem from="1553062260168" duration="2813000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2007000" />
+    <option name="totallyTimeSpent" value="2813000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="806" extended-state="6" />
@@ -411,6 +403,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/modify/admin.py">
@@ -612,8 +607,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modify/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="471" column="53" lean-forward="true" selection-start-line="471" selection-start-column="53" selection-end-line="471" selection-end-column="53" />
+        <state relative-caret-position="73">
+          <caret line="484" column="57" lean-forward="true" selection-start-line="484" selection-start-column="57" selection-end-line="484" selection-end-column="57" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
           </folding>

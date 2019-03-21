@@ -20,9 +20,9 @@ def sort(directory):
 
 def check_login(f):
     @wraps(f)
-    def inner(request,*arg,**kwargs):
+    def inner(request, *arg, **kwargs):
         if request.session.get('is_login') == '1':
-            return f(request,*arg,**kwargs)
+            return f(request, *arg, **kwargs)
         else:
             return redirect('/login')
     return inner

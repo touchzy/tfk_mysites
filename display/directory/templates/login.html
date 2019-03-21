@@ -27,24 +27,36 @@
         <div class="main-login" style="float: left;">
             <input id="language" name="language" style="display: none" value="{{ language }}"/>
             <input id="tag" name="tag" style="display: none"/>
+            <script>
+                if(!document.getElementById('language').value){
+                    let lang = navigator.languages ? navigator.languages[0] : navigator.language;
+                    if(lang == "en" || lang == "en-us"){
+                        document.getElementById('language').value=("English");
+                    }
+                    else
+                        document.getElementById('language').value=("Chinese");
+                    document.getElementById('tag').value=true;
+                    document.data.submit();
+                }
+            </script>
             <span id="head" class="main-login-head" style="font-weight: bold;font-size: 20px;color: #1E9FFF;">登录系统</span>
             <div class="main-login-input">
                 <div class="layui-form-item">
-                    <i class="layui-icon layui-icon-username layui-inline" style="font-size: 20px; color: #1E9FFF; margin-left: 14%"></i>
-                    <div class="layui-inline" style="width: 60%; margin-left: 1%;">
+                    <i class="layui-icon layui-icon-username layui-inline" style="font-size: 20px; width: 7%; color: #1E9FFF; margin-left: 15%; margin-top: 3%; position: absolute"></i>
+                    <div class="layui-inline" style="width: 60%; margin-left: 26%; position: absolute">
                       <input id="account" type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
-                    <i class="layui-icon layui-icon-password layui-inline" style="font-size: 20px; color: #1E9FFF; margin-left: 14%"></i>
-                    <div class="layui-inline" style="width: 60%; margin-left: 1%;">
+                    <i class="layui-icon layui-icon-password layui-inline" style="font-size: 20px; width: 7%; color: #1E9FFF; margin-left: 15%; margin-top: 23%; position: absolute;"></i>
+                    <div class="layui-inline" style="width: 60%; margin-left: 26%; margin-top: 20%; position: absolute;">
                       <input id="password" type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
                     </div>
                 </div>
             </div>
             <div class="main-login-button">
                 <button id="sign_in" class="layui-btn layui-btn-normal layui-btn-sm" style="width:100%;font-size: 15px;" onclick="login()">登录</button>
-                <span id="flag" style="color: darkred;font-size: 10px;margin-left: -4px;margin-top: 6px">&nbsp&nbsp&nbsp{{ flag }}</span>
+                <span id="flag" style="color: darkred;font-size: 10px;margin-left: -9px;margin-top: 6px">&nbsp&nbsp&nbsp{{ flag }}</span>
             </div>
             <script>
                 if('{{ language }}' == "English"){

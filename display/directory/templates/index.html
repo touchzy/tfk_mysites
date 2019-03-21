@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     {% load staticfiles %}
-    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>“减盐”主题网络数据监测团队</title>
     <link rel="stylesheet" href="{% static "layui/css/layui.css" %}">
     <link rel="stylesheet" href="{% static "layui/css/index.css" %}">
@@ -49,11 +48,22 @@
         <input name="username" style="display: none" value="{{ username }}"/>
         <input id="item" name="item" style="display: none" value="{{ directory.dirname }}"/>
         <input id="language" name="language" style="display: none" value="{{ language }}"/>
+        <script>
+            if(!document.getElementById('language').value){
+                let lang = navigator.languages ? navigator.languages[0] : navigator.language;
+                if(lang == "en" || lang == "en-us"){
+                    document.getElementById('language').value=("English");
+                }
+                else
+                    document.getElementById('language').value=("Chinese");
+                document.data.submit();
+            }
+        </script>
         <ul class="layui-nav layui-bg-green" lay-filter="manu">
             <li class="layui-nav-item" id="pdf"><a id="daily" href="javascript:"  name="pdf">日报</a></li>
             <li class="layui-nav-item" id="Monthly_Reports"><a id="monthly" href="javascript:"  name="Monthly_Reports">月报</a></li>
-            <li class="layui-nav-item" style="color: beige; margin-left: 60%" id="welcome">欢迎您，{{ username }}！</li>
-            <li class="layui-nav-item" style="color: beige; margin-left: 30px"><a id="exit" href="javascript:"  name="exit">退出</a></li>
+            <li class="layui-nav-item" style="color: beige; margin-right: 1%; float: right;"><a id="exit" href="javascript:"  name="exit">退出</a></li>
+            <li class="layui-nav-item" style="color: beige; margin-right: 1%; float: right;" id="welcome">欢迎您，{{ username }}！</li>
         </ul>
         <script>
             let type = document.getElementById("item").value.split('/')[0];

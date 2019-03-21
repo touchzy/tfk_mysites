@@ -30,8 +30,9 @@ html,body{
 }
 
 .main-login-button{
+    position: absolute;
     width: 72%;
-    margin-top: 7%;
+    margin-top: 40%;
     margin-left: 15%;
 }
 
