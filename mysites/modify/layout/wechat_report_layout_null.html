@@ -1,0 +1,75 @@
+<div style="margin-left:1%;padding:1px 16px;height:auto;margin-right:1%;margin-top:25px;">
+    <hr width=100% size=3 color=#000>
+    <h1 align="center">#subject_title_cn#-微信<br>#subject_title_en# - WeChat</h1>
+    <hr width=100% size=3 color=#000>
+    <div class="weibo_header">
+        <p>#the_date#，共监测到#article_count#篇微信公众号文章，本页面显示当日重复发布数量排名前五的文章，请点击标题搜索原文。</p>
+        <p>A total of #article_count# WeChat public articles were monitored in #the_date#. This page shows the top five
+            articles by
+            repeat number today.</p>
+        <p>由于微信公众号文章没有固定的链接，因而标题链接到的是根据文章标题进行检索的结果页面。</p>
+        <p>Because wechat articles don't have certain urls, the titles link to the websites that shows the result that
+            searching with the titles.</p>
+        <p>The original article is in Chinese only.</p>
+        <p>下图展示了最近30天的数据获取量。</p>
+        <p>The following figure shows the amount of data acquired in the last 30 days.</p>
+    </div>
+
+    <div id="#subject_word#_wechat_container" style="width: 100%;height:400px;margin:0 auto;"></div>
+
+    <script type="text/javascript">
+        var dom = document.getElementById("#subject_word#_wechat_container");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        app.title = '#subject_title_cn#微信柱状图';
+
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+                    type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            legend: {
+                data: ['Number of articles 文章数']
+            },
+            grid: {
+                left: '5%',
+                right: '5%',
+                bottom: '10%',
+                containLabel: true
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisLabel: {
+                        interval: 0,
+                        rotate: 40
+                    },
+                    data: #date_list#
+        }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+            series
+        :
+        [
+            {
+                name: 'Number of articles 文章数',
+                type: 'bar',
+                data: #count_list#
+        },
+        ]
+        }
+        ;
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    </script>
+
+</div>

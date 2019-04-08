@@ -21,18 +21,24 @@ from bson.objectid import ObjectId
 
 fat_keywords = ["反式脂肪酸", "氢化植物油","部分氢化植物油", "氢化脂肪", "部分氢化脂肪", "植物性酥油", "起酥油", "人造牛油", "人造黄油", "人造奶油", "植脂末", "人造脂肪酸"]
 
+
 def get_date(date, custom_date):
     return custom_date if custom_date else date
+
 
 def get_path(path):
     current_dir = os.path.dirname(__file__)
     return os.path.join(current_dir, path)
 
+
 def date_format(date):
     date_list = date.split("-")
     return date_list[0] + "年" + date_list[1] + "月" + date_list[2] + "日"
 
+
 from functools import wraps
+
+
 def check_login(f):
     @wraps(f)
     def inner(request,*arg,**kwargs):
@@ -41,6 +47,7 @@ def check_login(f):
         else:
             return redirect('/login')
     return inner
+
 
 def login(request):
     if request.method == "POST":
@@ -55,6 +62,7 @@ def login(request):
             return render(request, 'login.html', {"flag": "用户名或密码错误！"})
     return render(request, 'login.html')
 
+
 @check_login
 def index(request):
     user_id = request.session.get('user_id')
@@ -64,11 +72,13 @@ def index(request):
     else:
         return render(request,'index.html')
 
+
 def is_repeat(title_a, title_b):
     if (title_a in title_b) or (title_b in title_a):
         return True
     else:
         return False
+
 
 def get_repeat_num(query_set):
     wechat_dict = {}
@@ -86,6 +96,7 @@ def get_repeat_num(query_set):
             wechat_dict[article.title] = {"id": article._id, "count": 1}
     for key in wechat_dict.keys():
         Wechat_articles.objects(_id=wechat_dict[key]["id"]).update(repeat_num=wechat_dict[key]["count"])
+
 
 @check_login
 def get_wechat(request):
@@ -175,6 +186,7 @@ def get_wechat(request):
                     message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
                     return render(request, "message.html", {"message": message})
 
+
 def get_relation(query_set, date):
     salt_male, salt_female, fat_male, fat_female = 0, 0, 0, 0
     for article in query_set:
@@ -218,6 +230,7 @@ def get_relation(query_set, date):
         Weibo_content.objects(_id=article._id).update(is_related=is_related)
     new_note = Weibo_notes(_id=date, salt_male=salt_male, salt_female=salt_female, fat_male=fat_male, fat_female=fat_female)
     new_note.save()
+
 
 @check_login
 def get_weibo(request):
@@ -280,6 +293,7 @@ def get_weibo(request):
                 message = date_format(date) + '微博筛选完成！请返回首页继续进行核对工作'
                 return render(request, "message.html", {"message": message})
 
+
 @check_login
 def get_news(request):
     if request.method == "POST":
@@ -341,6 +355,7 @@ def get_news(request):
             else:
                 message = date + '新闻筛选完成！请返回首页继续进行核对工作'
                 return render(request, "message.html", {"message": message})
+
 
 @check_login
 def check(request):
@@ -440,6 +455,7 @@ def check(request):
                     message = date + '新闻无数据！请返回首页重新输入日期'
                 return render(request, "message.html", {"message": message})
 
+
 def get_counts(date, type):
     date_split = list(map(int, date.split("-")))
     one_day = datetime.timedelta(days=1)
@@ -447,22 +463,7 @@ def get_counts(date, type):
     ed = datetime.date(date_split[0], date_split[1], date_split[2])
     d = ed - thirty_days
     date_list = []
-    if type == "wechat":
-        salt_counts = []
-        fat_counts = []
-        daily_counts = Daily_count.objects(_id__gte=str(d))
-        for count in daily_counts:
-            date_list.append(str(d))
-            salt_counts.append(count.wechat_salt_count)
-            fat_counts.append(count.wechat_fat_count)
-            d += one_day
-            if d == ed:
-                date_list.append(str(ed))
-                salt_counts.append(Wechat_articles.objects(post_date=str(ed), subject="1").count())
-                fat_counts.append(Wechat_articles.objects(post_date=str(ed), subject="2").count())
-                break
-        return {"date_list": date_list, "salt_counts": salt_counts, "fat_counts": fat_counts}
-    else:
+    if type == "weibo":
         salt_male_counts = []
         salt_female_counts = []
         fat_male_counts = []
@@ -476,18 +477,38 @@ def get_counts(date, type):
             fat_female_counts.append(note.fat_female)
             d += one_day
         return {"date_list": date_list, "salt_male_counts": salt_male_counts, "salt_female_counts": salt_female_counts, "fat_male_counts": fat_male_counts, "fat_female_counts": fat_female_counts}
+    else:
+        salt_counts = []
+        fat_counts = []
+        daily_counts = Daily_count.objects(_id__gte=str(d))
+        for count in daily_counts:
+            date_list.append(str(d))
+            salt_counts.append(count.wechat_salt_count)
+            fat_counts.append(count.wechat_fat_count)
+            d += one_day
+            if d == ed:
+                date_list.append(str(ed))
+                if type == "wechat_null":
+                    salt_counts.append(0)
+                    fat_counts.append(0)
+                    break
+                salt_counts.append(Wechat_articles.objects(post_date=str(ed), subject="1").count())
+                fat_counts.append(Wechat_articles.objects(post_date=str(ed), subject="2").count())
+                break
+        return {"date_list": date_list, "salt_counts": salt_counts, "fat_counts": fat_counts}
+
 
 @check_login
 def get_html(request):
     date = get_date(request.GET.get("date"), request.GET.get("custom_date"))
     type = request.GET.get("type")
     if type == "wechat":
-        if Wechat_articles.objects(post_date=date, to_check=True) or not Wechat_articles.objects(post_date=date, is_useful__in=[True, False]):
-            message = date_format(date) + '微信仍有工作未完成，无法生成日报。'
+        if not Wechat_articles.objects(post_date=date):
+            message = date_format(date) + '微信暂无数据，无法生成日报。'
             return render(request, "message.html", {"message": message})
         else:
-            if not Wechat_articles.objects(post_date=date):
-                message = date_format(date) + '微信暂无数据，无法生成日报。'
+            if Wechat_articles.objects(post_date=date, to_check=True) or not Wechat_articles.objects(post_date=date, is_useful__in=[True, False]):
+                message = date_format(date) + '微信仍有工作未完成，无法生成日报。'
                 return render(request, "message.html", {"message": message})
             else:
                 wechat_articles_salt = Wechat_articles.objects(post_date=date, is_useful=True, subject="1").order_by("-repeat_num")
@@ -508,13 +529,32 @@ def get_html(request):
                     daily_report_new.save()
                 message = date_format(date) + '微信日报生成完毕！'
                 return render(request, "message.html", {"message": message})
+    elif type == "wechat_null":
+        wechat_articles_salt = []
+        wechat_articles_fat = []
+        count_dict = get_counts(date, type)
+        daily_count = Daily_count.objects(_id=date)
+        if daily_count:
+            daily_count.update(wechat_salt_count=count_dict["salt_counts"][-1], wechat_fat_count=count_dict["fat_counts"][-1])
+        else:
+            daily_count_new = Daily_count(_id=date, wechat_salt_count=count_dict["salt_counts"][-1], wechat_fat_count=count_dict["fat_counts"][-1])
+            daily_count_new.save()
+        salt_wechat_report, fat_wechat_report = wechat_dailyreport(wechat_articles_salt, wechat_articles_fat, date, count_dict)
+        daily_report = Daily_report.objects(_id=date)
+        if daily_report:
+            daily_report.update(salt_wechat_report=salt_wechat_report, fat_wechat_report=fat_wechat_report)
+        else:
+            daily_report_new = Daily_report(_id=date, salt_wechat_report=salt_wechat_report, fat_wechat_report=fat_wechat_report)
+            daily_report_new.save()
+        message = date_format(date) + '微信日报生成完毕！'
+        return render(request, "message.html", {"message": message})
     elif type == "weibo":
-        if Weibo_content.objects(date=date, to_check=True) or not Weibo_content.objects(date=date, is_related__in=[True, False]):
-            message = date_format(date) + '微博仍有工作未完成，无法生成日报。'
+        if not Weibo_content.objects(date=date):
+            message = date_format(date) + '微博暂无数据，无法生成日报。'
             return render(request, "message.html", {"message": message})
         else:
-            if not Weibo_content.objects(date=date):
-                message = date_format(date) + '微博暂无数据，无法生成日报。'
+            if Weibo_content.objects(date=date, to_check=True) or not Weibo_content.objects(date=date, is_related__in=[True, False]):
+                message = date_format(date) + '微博仍有工作未完成，无法生成日报。'
                 return render(request, "message.html", {"message": message})
             else:
                 weibo_articles_salt = Weibo_content.objects(date=date, is_useful=True, subject="盐").order_by("-repost")
@@ -539,12 +579,12 @@ def get_html(request):
                 return render(request, "message.html", {"message": message})
     else:
         date_news = date_format(date)
-        if News_articles.objects(time__contains=date_news, to_filter=True) or News_articles.objects(time__contains=date_news, to_check=True):
-            message = date_news + '新闻仍有工作未完成，无法生成日报。'
+        if not News_articles.objects(time__contains=date_news):
+            message = date_news + '新闻暂无数据，无法生成日报。'
             return render(request, "message.html", {"message": message})
         else:
-            if not News_articles.objects(time__contains=date_news):
-                message = date_news + '新闻暂无数据，无法生成日报。'
+            if News_articles.objects(time__contains=date_news, to_filter=True) or News_articles.objects(time__contains=date_news, to_check=True):
+                message = date_news + '新闻仍有工作未完成，无法生成日报。'
                 return render(request, "message.html", {"message": message})
             else:
                 news_articles = News_articles.objects(time__contains=date_news, is_useful=True)
@@ -576,6 +616,7 @@ def get_html(request):
                 message = date_news + '新闻日报生成完毕！'
                 return render(request, "message.html", {"message": message})
 
+
 @check_login
 def get_report(request):
     date = get_date(request.GET.get("date"), request.GET.get("custom_date"))
@@ -595,6 +636,7 @@ def get_report(request):
         message = date_format(date) + '仍有工作未完成，无法生成日报。'
         return render(request, "message.html", {"message": message})
 
+
 @check_login
 def upload(request):
     pdf = request.FILES.get("upload")
@@ -605,6 +647,7 @@ def upload(request):
         return render(request, "message.html", {"message": "上传成功！"})
     else:
         return render(request, "message.html", {"message": "上传失败，请上传.pdf文件！"})
+
 
 def get_compare(num):
     if num >= 0:
@@ -626,11 +669,13 @@ def get_compare(num):
         else:
             return "（与前日基本一致）"
 
+
 def get_yesterday(date):
     date_split = list(map(int, date.split("-")))
     today = datetime.date(date_split[0], date_split[1], date_split[2])
     one_day = datetime.timedelta(days=1)
     return str(today - one_day)
+
 
 def get_string(date):
     daily_count_today = Daily_count.objects(_id=date)
@@ -647,6 +692,7 @@ def get_string(date):
     else:
         return ""
 
+
 @check_login
 def show_string(request):
     date = request.POST.get("date")
@@ -655,6 +701,7 @@ def show_string(request):
         return render(request, "index.html", {"string": string})
     else:
         return render(request, "message.html", {"message": date_format(date) + "工作未完成，无法统计数据"})
+
 
 @check_login
 def send_email(request):

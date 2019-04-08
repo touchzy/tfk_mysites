@@ -10,7 +10,10 @@ def get_path(path):
 
 def wechat_dailyreport(wechat_articles_salt, wechat_articles_fat, date, counts_dict):
     wechat_article_layout = open(get_path("layout/wechat_article_layout.html"), "r", encoding="utf8").read()
-    wechat_report_layout = open(get_path("layout/wechat_report_layout.html"), "r", encoding="utf8").read()
+    if counts_dict["salt_counts"][-1] == 0 and counts_dict["fat_counts"][-1] == 0:
+        wechat_report_layout = open(get_path("layout/wechat_report_layout_null.html"), "r", encoding="utf8").read()
+    else:
+        wechat_report_layout = open(get_path("layout/wechat_report_layout.html"), "r", encoding="utf8").read()
 
     ################减盐###############
     index = 1
