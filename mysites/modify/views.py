@@ -290,6 +290,18 @@ def get_weibo(request):
                 article.id = article._id
                 return render(request, "weibo_articles.html", {"article": article, "date": date})
             else:
+                salt_male, salt_female, fat_male, fat_female = 0, 0, 0, 0
+                for article in Weibo_content.objects(date=date, is_related=True):
+                    if article.subject == "盐" and article.user_sex == "男":
+                        salt_male += 1
+                    elif article.subject == "盐" and article.user_sex == "女":
+                        salt_female += 1
+                    elif article.subject == "反式脂肪酸" and article.user_sex == "男":
+                        fat_male += 1
+                    elif article.subject == "反式脂肪酸" and article.user_sex == "女":
+                        fat_female += 1
+                new_note = Weibo_notes(_id=date, salt_male=salt_male, salt_female=salt_female, fat_male=fat_male, fat_female=fat_female)
+                new_note.save()
                 message = date_format(date) + '微博筛选完成！请返回首页继续进行核对工作'
                 return render(request, "message.html", {"message": message})
 
@@ -683,7 +695,7 @@ def get_string(date):
     if daily_count_today and daily_count_yesterday:
         count_today = daily_count_today[0]
         count_yesterday = daily_count_yesterday[0]
-        if count_today.news_salt_count and count_today.wechat_salt_count and count_today.weibo_salt_count:
+        if count_today.news_salt_count and (count_today.wechat_salt_count or count_today.wechat_salt_count == 0) and count_today.weibo_salt_count:
             salt_string = '与“减盐”相关的数据：共监测到%d篇新闻%s，其中属于重点监测省份的有%d篇；获取到%d篇微信公众号文章%s；获取到%d条微博%s，其中转发量超过50的有%d条；\r\n' % (count_today.news_salt_count, get_compare(count_today.news_salt_count - count_yesterday.news_salt_count), count_today.important_salt, count_today.wechat_salt_count, get_compare(count_today.wechat_salt_count - count_yesterday.wechat_salt_count), count_today.weibo_salt_count, get_compare(count_today.weibo_salt_count - count_yesterday.weibo_salt_count), count_today.hot_salt)
             fat_string = '与“反式脂肪酸”相关的数据：共监测到%d篇新闻%s，其中属于重点监测省份的有%d篇；获取到%d篇微信公众号文章%s；获取到%d条微博%s，其中转发量超过50的有%d条。' % (count_today.news_fat_count, get_compare(count_today.news_fat_count - count_yesterday.news_fat_count), count_today.important_fat, count_today.wechat_fat_count, get_compare(count_today.wechat_fat_count - count_yesterday.wechat_fat_count), count_today.weibo_fat_count, get_compare(count_today.weibo_fat_count - count_yesterday.weibo_fat_count), count_today.hot_fat)
             return salt_string + fat_string
