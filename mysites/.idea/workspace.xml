@@ -5,7 +5,10 @@
       <change beforePath="$PROJECT_DIR$/../display/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../display/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../display/directory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../display/directory/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modify/baiduTranslate.py" beforeDir="false" afterPath="$PROJECT_DIR$/modify/baiduTranslate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modify/templates/news_check.html" beforeDir="false" afterPath="$PROJECT_DIR$/modify/templates/news_check.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modify/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/modify/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysites/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mysites/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modify/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="638" column="37" selection-start-line="638" selection-start-column="37" selection-end-line="638" selection-end-column="37" />
+            <state relative-caret-position="2085">
+              <caret line="157" column="6" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="6" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
               </folding>
@@ -34,26 +37,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/modify/getReport.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modify/templates/news_check.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="99" lean-forward="true" selection-start-line="10" selection-start-column="99" selection-end-line="10" selection-end-column="99" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="900">
+              <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modify/layout/daily_report_layout.html">
+        <entry file="file://$PROJECT_DIR$/modify/baiduTranslate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
-              <caret line="113" column="53" lean-forward="true" selection-start-line="113" selection-start-column="53" selection-end-line="113" selection-end-column="53" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="630">
+              <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -66,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modify/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1800">
-              <caret line="120" column="51" selection-start-line="120" selection-start-column="51" selection-end-line="120" selection-end-column="51" />
+            <state relative-caret-position="1515">
+              <caret line="101" column="14" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -104,10 +101,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modify/getWeiboHtml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="270">
               <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
@@ -175,7 +172,6 @@
         <option value="$PROJECT_DIR$/modify/getNewHtml.py" />
         <option value="$PROJECT_DIR$/modify/getNewsHtml.py" />
         <option value="$PROJECT_DIR$/modify/templates/weibo_check.html" />
-        <option value="$PROJECT_DIR$/modify/templates/news_check.html" />
         <option value="$PROJECT_DIR$/modify/templates/wechat_check.html" />
         <option value="$PROJECT_DIR$/modify/templates/weibo_articles.html" />
         <option value="$PROJECT_DIR$/modify/templates/wechat_articles.html" />
@@ -193,15 +189,14 @@
         <option value="$PROJECT_DIR$/modify/getWechatHtml.py" />
         <option value="$PROJECT_DIR$/modify/layout/wechat_report_layout_null.html" />
         <option value="$PROJECT_DIR$/mysites/settings.py" />
+        <option value="$PROJECT_DIR$/modify/templates/news_check.html" />
         <option value="$PROJECT_DIR$/modify/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="647" />
-    <option name="y" value="24" />
-    <option name="width" value="715" />
-    <option name="height" value="765" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -253,7 +248,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -381,32 +376,48 @@
       <workItem from="1557711332045" duration="717000" />
       <workItem from="1557716598050" duration="383000" />
       <workItem from="1558332707810" duration="1953000" />
-      <workItem from="1559966796917" duration="927000" />
+      <workItem from="1559966796917" duration="1438000" />
+      <workItem from="1560130381053" duration="220000" />
+      <workItem from="1561344811720" duration="3980000" />
+      <workItem from="1563433584879" duration="3210000" />
+      <workItem from="1563526314422" duration="2406000" />
+      <workItem from="1563555899617" duration="564000" />
+      <workItem from="1564024535497" duration="287000" />
+      <workItem from="1564126581504" duration="22000" />
+      <workItem from="1564990200145" duration="247000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15582000" />
+    <option name="totallyTimeSpent" value="27029000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19027181" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2725322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4072022" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.57202214" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.17951807" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.14698794" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.45214522" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.22714682" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.45180723" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.38433734" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -454,13 +465,6 @@
     <entry file="file://$PROJECT_DIR$/modify/layout/weibo_report_layout.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/modify/templates/news_check.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="72" column="52" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modify/templates/wechat_check.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -492,13 +496,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modify/static/echarts.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modify/baiduTranslate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="44" column="26" lean-forward="true" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -551,10 +548,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modify/getReport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="10" column="99" selection-start-line="10" selection-start-column="99" selection-end-line="10" selection-end-column="99" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mysites/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="80" column="44" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="44" />
+        <state relative-caret-position="360">
+          <caret line="24" column="65" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modify/layout/daily_report_layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="113" column="53" selection-start-line="113" selection-start-column="53" selection-end-line="113" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modify/getNewsHtml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4995">
+          <caret line="336" selection-start-line="336" selection-end-line="336" />
+          <folding>
+            <element signature="e#25#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modify/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2085">
+          <caret line="157" column="6" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="6" />
+          <folding>
+            <element signature="e#24#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modify/templates/news_check.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modify/baiduTranslate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -563,8 +611,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modify/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1800">
-          <caret line="120" column="51" selection-start-line="120" selection-start-column="51" selection-end-line="120" selection-end-column="51" />
+        <state relative-caret-position="1515">
+          <caret line="101" column="14" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -578,6 +626,13 @@
     <entry file="file://$PROJECT_DIR$/modify/templates/message.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/modify/templates/news_articles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modify/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2055">
@@ -587,57 +642,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modify/getWeiboHtml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="270">
           <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modify/layout/daily_report_layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="113" column="53" lean-forward="true" selection-start-line="113" selection-start-column="53" selection-end-line="113" selection-end-column="53" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modify/getNewsHtml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4629">
-          <caret line="336" selection-start-line="336" selection-end-line="336" />
-          <folding>
-            <element signature="e#25#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modify/templates/news_articles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modify/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="638" column="37" selection-start-line="638" selection-start-column="37" selection-end-line="638" selection-end-column="37" />
-          <folding>
-            <element signature="e#24#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modify/getReport.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="99" lean-forward="true" selection-start-line="10" selection-start-column="99" selection-end-line="10" selection-end-column="99" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

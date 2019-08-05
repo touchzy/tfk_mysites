@@ -16,14 +16,14 @@ class BaiduTranslate(object):
         self.q = translate_str
         self.from_ = 'zh'
         self.to_ = 'en'
-        self.appid = '20180710000184142'
-        self.key = 'UFfj9U5pyhhB2hArDwUh'
-        self.salt = '1994052488'
+        self.appid = '20190718000319027'
+        self.key = '165gdtmBviFEJLNwDbYi'
+        self.salt = '1994052499'
         str1 = self.appid + self.q + self.salt + self.key
         hl = hashlib.md5()
         hl.update(str1.encode(encoding='utf-8'))
         self.sign = hl.hexdigest()
-        self.full_url = self.url + "?q=" + self.q + "&from=" + self.from_ + "&to=" + self.to_ + "&appid=" + self.appid + "&salt=" + self.salt + "&sign=" + self.sign
+        self.full_url = self.url + "?q=" + requests.utils.quote(self.q) + "&from=" + self.from_ + "&to=" + self.to_ + "&appid=" + self.appid + "&salt=" + self.salt + "&sign=" + self.sign
     
     def getHTMLText(self, url):
         try:

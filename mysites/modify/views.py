@@ -107,9 +107,15 @@ def get_wechat(request):
         submit_type = request.POST.get("submit")
         if submit_type == "submit":
             title = request.POST.get("title")
-            title_en = BaiduTranslate(title.replace("#", "").replace("&", "")).translate()
             abstr = request.POST.get("abstr")
-            abstr_en = BaiduTranslate(abstr.replace("#", "").replace("&", "")).translate()
+            translate_string = abstr.replace("#", "").replace("&", "") + '2018140653。' + title.replace("#", "").replace("&", "")
+            translate_list = BaiduTranslate(translate_string).translate().split('2018140653.')
+            try:
+                abstr_en = translate_list[0]
+                title_en = translate_list[1]
+            except:
+                title_en = BaiduTranslate(title.replace("#", "").replace("&", "")).translate()
+                abstr_en = BaiduTranslate(abstr.replace("#", "").replace("&", "")).translate()
             Wechat_articles.objects(_id=id).update(is_useful=True, to_filter=False, to_check=True, abstract_cn=abstr, abstract_en=abstr_en, title_en=title_en)
         else:
             Wechat_articles.objects(_id=id).update(is_useful=False, to_filter=False, to_check=False)
@@ -320,9 +326,16 @@ def get_news(request):
             abstr = request.POST.get("abstr")
             title = request.POST.get("title")
             source = request.POST.get("source")
-            abstr_en = BaiduTranslate(abstr.replace("#", "").replace("&", "")).translate()
-            title_en = BaiduTranslate(title.replace("#", "").replace("&", "")).translate()
-            source_en = BaiduTranslate(source.replace("#", "").replace("&", "")).translate()
+            translate_string = abstr.replace("#", "").replace("&", "") + '2018140653。' + source.replace("#", "").replace("&", "") + '。' + '2018140653。' + title.replace("#", "").replace("&", "")
+            translate_list = BaiduTranslate(translate_string).translate().split('2018140653.')
+            try:
+                abstr_en = translate_list[0]
+                source_en = translate_list[1].replace('.', '')
+                title_en = translate_list[2]
+            except:
+                abstr_en = BaiduTranslate(abstr.replace("#", "").replace("&", "")).translate()
+                title_en = BaiduTranslate(title.replace("#", "").replace("&", "")).translate()
+                source_en = BaiduTranslate(source.replace("#", "").replace("&", "")).translate()
             try:
                 new = News_articles.objects(_id=ObjectId(id))
                 if new:
@@ -401,14 +414,15 @@ def check(request):
         else:
             title_en = request.POST.get("title_en")
             abstract_en = request.POST.get("abstr_en")
+            source_en = request.POST.get("source_en")
             try:
                 new = News_articles.objects(_id=ObjectId(id))
                 if new:
-                    new.update(to_check=False, title_en=title_en, abstract_en=abstract_en)
+                    new.update(to_check=False, title_en=title_en, abstract_en=abstract_en, source_en=source_en)
                 else:
-                    News_articles.objects(_id=id).update(to_check=False, title_en=title_en, abstract_en=abstract_en)
+                    News_articles.objects(_id=id).update(to_check=False, title_en=title_en, abstract_en=abstract_en, source_en=source_en)
             except:
-                News_articles.objects(_id=id).update(to_check=False, title_en=title_en, abstract_en=abstract_en)
+                News_articles.objects(_id=id).update(to_check=False, title_en=title_en, abstract_en=abstract_en, source_en=source_en)
             news_article = News_articles.objects(time__contains=date, to_check=True).limit(1)
             if news_article:
                 article = news_article[0]

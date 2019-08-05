@@ -57,6 +57,36 @@
                     <td><br/><br/></td>
                 </tr>
                 <tr>
+                    <td width="10%" style="font-size: 18px;font-weight: bolder">来源</td>
+                    <td width="90%">{{ article.source }}</td>
+                </tr>
+                <tr>
+                    <td><br/></td>
+                </tr>
+                <tr>
+                    <td style="font-size: 18px;font-weight: bolder;">机器翻译</td>
+                    <td>
+                        <textarea id="source_en_m" rows="2" readonly="readonly" style="border: none;font-size: 18px;width:100%">{{ article.source_en }}</textarea>
+                        <a href="" id="source">复制</a>
+                        <script type="text/javascript">
+                            var btn=document.getElementById("source");
+                            btn.onclick=function() {
+                                copy = document.getElementById("source_en_m");
+                                copy.select();
+                                document.execCommand("Copy");
+                                return false;
+                            }
+                        </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 18px;font-weight: bolder;">输入翻译</td>
+                    <td><textarea rows="2" style="width:100%;font-size: 18px" name="source_en"></textarea></td>
+                </tr>
+                <tr>
+                    <td><br/><br/></td>
+                </tr>
+                <tr>
                     <td style="font-size: 18px;font-weight: bolder">中文摘要</td>
                     <td>{{ article.abstract_cn }}</td>
                 </tr>
