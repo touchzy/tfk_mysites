@@ -4,11 +4,6 @@
     <list default="true" id="8b4a1561-6afd-432d-ae1c-c4a829ceda8d" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../display/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../display/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../display/directory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../display/directory/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modify/baiduTranslate.py" beforeDir="false" afterPath="$PROJECT_DIR$/modify/baiduTranslate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modify/templates/news_check.html" beforeDir="false" afterPath="$PROJECT_DIR$/modify/templates/news_check.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modify/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/modify/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysites/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mysites/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,18 +20,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modify/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2085">
-              <caret line="157" column="6" selection-start-line="157" selection-start-column="6" selection-end-line="157" selection-end-column="6" />
-              <folding>
-                <element signature="e#24#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modify/templates/news_check.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -104,7 +87,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modify/getWeiboHtml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="87">
               <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
               <folding>
                 <element signature="e#24#33#0" expanded="true" />
@@ -213,23 +196,6 @@
             <path>
               <item name="mysites" type="b2602c69:ProjectViewProjectNode" />
               <item name="mysites" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysites" type="462c0819:PsiDirectoryNode" />
-              <item name="modify" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysites" type="462c0819:PsiDirectoryNode" />
-              <item name="modify" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mysites" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mysites" type="462c0819:PsiDirectoryNode" />
-              <item name="modify" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mysites" type="b2602c69:ProjectViewProjectNode" />
@@ -384,12 +350,12 @@
       <workItem from="1563555899617" duration="564000" />
       <workItem from="1564024535497" duration="287000" />
       <workItem from="1564126581504" duration="22000" />
-      <workItem from="1564990200145" duration="247000" />
+      <workItem from="1564990200145" duration="607000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27029000" />
+    <option name="totallyTimeSpent" value="27389000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -417,7 +383,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.45180723" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.38433734" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.5554217" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -640,9 +606,12 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/modify/getWeiboHtml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="87">
           <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
           <folding>
             <element signature="e#24#33#0" expanded="true" />
