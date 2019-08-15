@@ -29,7 +29,8 @@ urlpatterns = [
     path('check/', modify_views.check),
     path('html/', modify_views.get_html),
     path('report/', modify_views.get_report),
-    path('upload', modify_views.upload),
+    path('upload_daily', modify_views.upload_daily),
+    path('upload_month', modify_views.upload_month),
     path('send', modify_views.send_email),
     path('string', modify_views.show_string),
 

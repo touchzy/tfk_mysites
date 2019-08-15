@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/iconfont.css' %}">
     <script>
         function wechat(){
             document.getElementById("hh").style.display="block";
@@ -33,17 +35,28 @@
             document.date_info.submit();
         }
         function report() {
-            document.getElementById("hh").style.display="block";
             document.date_info.action="report";
+            document.date_info.target="_blank";
             document.date_info.submit();
         }
-        function upload() {
-            if(document.upload_file.upload.value != "") {
-                document.getElementById("hh").style.display = "block";
-                document.upload_file.action = "upload";
-                document.upload_file.submit();
-            }else{
-                alert("请先选择pdf文件！")
+        function upload(type) {
+            if(type == 0){
+                if(document.upload_file_daily.upload.value != "") {
+                    document.getElementById("hh").style.display = "block";
+                    document.upload_file_daily.action = "upload_daily";
+                    document.upload_file_daily.submit();
+                }else{
+                    alert("请先选择pdf文件！")
+                }
+            }
+            else{
+                if(document.upload_file_month.upload.value != "") {
+                    document.getElementById("hh").style.display = "block";
+                    document.upload_file_month.action = "upload_month";
+                    document.upload_file_month.submit();
+                }else{
+                    alert("请先选择pdf文件！")
+                }
             }
         }
         function string() {
@@ -60,7 +73,63 @@
                 alert("请先输入邮件内容！")
             }
         }
+        function show(type) {
+            if(type == 'd'){
+                let show = document.getElementById("d_pdf");
+                let path_array = document.getElementById("d").value.split('\\');
+                show.innerText = path_array[path_array.length-1];
+                show.style.display = "block";
+            }
+            else{
+                let show = document.getElementById("m_pdf");
+                let path_array = document.getElementById("m").value.split('\\');
+                show.innerText = path_array[path_array.length-1];
+                show.style.display = "block";
+            }
+        }
     </script>
+    <style>
+        .a-upload {
+            padding: 4px 10px;
+            height: 20px;
+            line-height: 20px;
+            position: relative;
+            cursor: pointer;
+            color: #638864;
+            background: #e5f8fa;
+            border: 0px transparent;
+            border-radius: 4px;
+            overflow: hidden;
+            display: inline-block;
+            float: left;
+            margin-right: 10px;
+            margin-left: 10px;
+            bottom: 4px;
+            *display: inline;
+            *zoom: 1
+        }
+
+        .a-upload  input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            cursor: pointer
+        }
+
+        .a-upload:hover {
+            color: #e5f8fa;
+            background: #b1e6ee;
+            border-color: #ccc;
+            text-decoration: none
+        }
+
+        .uploadfile {
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
     <form action="" method="get" name="date_info">
@@ -104,11 +173,32 @@
         <a href="#" onclick="report()">生成总日报</a>
         <br/><br/>
     </form>
-    <form action="" method="post" name="upload_file" enctype="multipart/form-data">
+    <form action="" method="post" name="upload_file_daily" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="file" name="upload"/>
-        <a href="#" onclick="upload()">上传pdf</a>
-        <br/><br/>
+        <div class="uploadfile">
+            <span style="font-size: 16px;font-weight:bolder;float:left;">上传日报：</span>
+            <div class="a-upload">
+                <i class="iconfont icon-shangchuan" style="color:#48adfc;font-size: 30px"></i>
+                <input id='d' type="file" name="upload" style="opacity: 0" onchange="show('d')"/>
+            </div>
+            <span id="d_pdf" style="display: none;float: left;margin-left: 10px;margin-right: 10px;"></span>
+            <a href="#" onclick="upload(0)" style="font-size: 15px;float:left;margin-left: 10px;bottom: 2px;"> 确认上传</a>
+            <span style="font-size: 14px;float:left;margin-left: 30px;">ps：大家不要忘记上传pdf，补起来有点麻烦o.o</span>
+            <br/><br/>
+        </div>
+    </form>
+    <form action="" method="post" name="upload_file_month" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="uploadfile">
+            <span style="font-size: 16px;float:left;">上传月报：</span>
+            <div class="a-upload">
+                <i class="iconfont icon-shangchuan" style="color:#55fce3;font-size: 30px"></i>
+                <input id='m' type="file" name="upload" style="opacity: 0" onchange="show('m')"/>
+            </div>
+            <span id="m_pdf" style="display: none;float:left;margin-left: 10px;margin-right: 10px;"></span>
+            <a href="#" onclick="upload(1)" style="font-size: 15px;float:left;margin-left: 10px;bottom: 2px;">确认上传</a>
+            <br/><br/>
+        </div>
     </form>
     <form action="" method="post" name="send_mail" enctype="multipart/form-data">
         {% csrf_token %}

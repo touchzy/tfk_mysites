@@ -664,10 +664,26 @@ def get_report(request):
 
 
 @check_login
-def upload(request):
+def upload_daily(request):
     pdf = request.FILES.get("upload")
     if ".pdf" in pdf.name:
+        if 'Daily' not in pdf.name:
+            return render(request, "message.html", {"message": "上传失败，请上传日报文件！"})
         with open("../daily_report/pdf/%s" % pdf.name, 'wb+') as f:
+            for chunk in pdf.chunks():
+                f.write(chunk)
+        return render(request, "message.html", {"message": "上传成功！"})
+    else:
+        return render(request, "message.html", {"message": "上传失败，请上传.pdf文件！"})
+
+
+@check_login
+def upload_month(request):
+    pdf = request.FILES.get("upload")
+    if ".pdf" in pdf.name:
+        if 'Monthly' not in pdf.name:
+            return render(request, "message.html", {"message": "上传失败，请上传月报文件！"})
+        with open("../daily_report/Monthly_Reports/%s" % pdf.name, 'wb+') as f:
             for chunk in pdf.chunks():
                 f.write(chunk)
         return render(request, "message.html", {"message": "上传成功！"})
