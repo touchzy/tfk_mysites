@@ -18,6 +18,7 @@ from .getWeiboHtml import weibo_dailyreport
 from .getWechatHtml import wechat_dailyreport
 from .getReport import dailyreport
 from bson.objectid import ObjectId
+from pytz import timezone
 
 fat_keywords = ["反式脂肪酸", "氢化植物油","部分氢化植物油", "氢化脂肪", "部分氢化脂肪", "植物性酥油", "起酥油", "人造牛油", "人造黄油", "人造奶油", "植脂末", "人造脂肪酸"]
 
@@ -67,10 +68,21 @@ def login(request):
 def index(request):
     user_id = request.session.get('user_id')
     userobj = User_account.objects(_id=ObjectId(user_id))
+    date = get_yesterday(datetime.datetime.now(timezone('Asia/Shanghai')).strftime('%Y-%m-%d'))
+    daily_report = Daily_report.objects(_id=date)
+    wc, wb, ne = 0, 0, 0
+    if daily_report:
+        report = daily_report[0]
+        if report.fat_wechat_report and report.salt_wechat_report:
+            wc = 1
+        if report.fat_weibo_report and report.salt_weibo_report:
+            wb = 1
+        if report.fat_news_report and report.salt_news_report:
+            ne = 1
     if userobj:
-        return render(request,'index.html',{"user":userobj[0].name})
+        return render(request, 'index.html', {"user": userobj[0].name, 'wc': wc, 'wb': wb, 'ne': ne})
     else:
-        return render(request,'index.html')
+        return render(request, 'index.html', {'wc': wc, 'wb': wb, 'ne': ne})
 
 
 def is_repeat(title_a, title_b):
@@ -651,10 +663,9 @@ def get_report(request):
         report = daily_report[0]
         if report.fat_news_report and report.salt_news_report and report.fat_weibo_report and report.salt_weibo_report and report.fat_wechat_report and report.salt_wechat_report:
             daily_report_html = dailyreport(report, date)
-            daily_report_html_upload = daily_report_html.replace("../static/echarts.js", ".static/echarts.js")
             with open("../daily_report/Daily_Reports/dailyReport_%s.html" % date.replace("-", ""), 'w', encoding="utf-8") as f:
-                f.write(daily_report_html_upload)
-            return HttpResponse(daily_report_html)
+                f.write(daily_report_html)
+            return HttpResponse(daily_report_html.replace('.static/echarts.js', '../static/echarts.js'))
         else:
             message = date_format(date) + '仍有工作未完成，无法生成日报。'
             return render(request, "message.html", {"message": message})
@@ -759,7 +770,7 @@ def send_email(request):
         cc = 'touchzy@126.com'
         message = MIMEMultipart()
         message['From'] = "%s<%s>" % (Header('“减盐”主题网络数据监测团队', 'GB2312'), Header(sender, "ascii"))
-        message['To'] = "%s<1299780716@qq.com>"%Header('哈哈','gb2312')
+        message['To'] = "%s<1299780716@qq.com>" % Header('哈哈','gb2312')
         message['Cc'] = '哈哈<touchzy@126.com>'
         message['Subject'] = Header(date.replace("-", "") + "日报", 'utf-8')
         html = open(get_path("layout/email_layout.html"), "r", encoding="utf-8").read()

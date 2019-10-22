@@ -1,9 +1,11 @@
 import os
 import copy
 
+
 def get_path(path):
     current_dir = os.path.dirname(__file__)
     return os.path.join(current_dir, path)
+
 
 def dailyreport(report, date):
     daily_report_layout = open(get_path("layout/daily_report_layout.html"), "r", encoding="utf8").read()

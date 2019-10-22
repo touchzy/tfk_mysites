@@ -10,28 +10,33 @@
         function wechat(){
             document.getElementById("hh").style.display="block";
             document.date_info.action="wechat";
+            document.date_info.target="_self";
             document.date_info.submit();
         }
         function weibo() {
             document.getElementById("hh").style.display="block";
             document.date_info.action="weibo";
+            document.date_info.target="_self";
             document.date_info.submit();
         }
         function news() {
             document.getElementById("hh").style.display="block";
             document.date_info.action="news";
+            document.date_info.target="_self";
             document.date_info.submit();
         }
         function abstr(type) {
             document.getElementById("hh").style.display="block";
             document.getElementById("type").value=(type);
             document.date_info.action="check";
+            document.date_info.target="_self";
             document.date_info.submit();
         }
         function html(type) {
             document.getElementById("hh").style.display="block";
             document.getElementById("type").value=(type);
             document.date_info.action="html";
+            document.date_info.target="_self";
             document.date_info.submit();
         }
         function report() {
@@ -152,23 +157,37 @@
                         <td width="40px"><a href="#" onclick="wechat()">筛选</a></td>
                         <td width="70px"><a href="#" onclick="abstr('wechat')">核对翻译</a></td>
                         <td width="70px"><a href="#" onclick="html('wechat')">生成Html</a></td>
-                        <td width="100px"><a href="#" onclick="html('wechat_null')">生成Html(空)</a></td>
+                        <td><span id="wc" style="display: none;">&nbsp;&nbsp;done!</span></td>
+{#                        <td width="100px"><a href="#" onclick="html('wechat_null')">生成Html(空)</a></td>#}
                     </tr>
                     <tr>
                         <td style="font-size: 16px;font-weight: bolder">微博</td>
                         <td><a href="#" onclick="weibo()">筛选</a></td>
                         <td><a href="#" onclick="abstr('weibo')">核对翻译</a></td>
                         <td><a href="#" onclick="html('weibo')">生成Html</a></td>
+                        <td><span id="wb" style="display: none;">&nbsp;&nbsp;done!</span></td>
                     </tr>
                     <tr>
                         <td style="font-size: 16px;font-weight: bolder">新闻</td>
                         <td><a href="#" onclick="news()">筛选</a></td>
                         <td><a href="#" onclick="abstr('news')">核对翻译</a></td>
                         <td><a href="#" onclick="html('news')">生成Html</a></td>
+                        <td><span id="ne" style="display: none;">&nbsp;&nbsp;done!</span></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+        <script>
+            if('{{ wc }}' == 1){
+                document.getElementById("wc").style.display = "block";
+            }
+            if('{{ wb }}' == 1){
+                document.getElementById("wb").style.display = "block";
+            }
+            if('{{ ne }}' == 1){
+                document.getElementById("ne").style.display = "block";
+            }
+        </script>
         <br/>
         <a href="#" onclick="report()">生成总日报</a>
         <br/><br/>
