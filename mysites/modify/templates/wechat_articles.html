@@ -19,7 +19,7 @@
                 if(type == "next") {
                     return true;
                 }else {
-                    if (form.abstr.value != "") {
+                    if (form.abstr.value != "" && form.url.value != "" && form.read_num.value != "") {
                         return true;
                     }else{
                         alert("请填写所有信息再提交！")
@@ -29,6 +29,10 @@
             }else{
                 return false;
             }
+        }
+
+        function openNewWin(url, title) {
+            window.open(url, title, "status=no,height=900,width=1000,left=300");
         }
     </script>
 </head>
@@ -47,13 +51,26 @@
                     <td>{{ article.keyword }}</td>
                 </tr>
                 <tr>
-                    <td height="40px">重复:</td>
-                    <td>{{ article.repeat_num }}</td>
+                    <td height="40px">公众号:</td>
+                    <td>{{ article.user }}</td>
                 </tr>
+{#                <tr>#}
+{#                    <td height="40px">阅读量:</td>#}
+{#                    <td>#}
+{#                        <input name="read_num" type="number" style="width:10%"/>#}
+{#                    </td>#}
+{#                </tr>#}
+{#                <tr>#}
+{#                    <td height="40px">链接:</td>#}
+{#                    <td>#}
+{#                        <input name="url" type="text" style="width:100%"/>#}
+{#                    </td>#}
+{#                </tr>#}
                 <tr>
                     <td>内容:</td>
                     <td>
-                        <span id="content">{{ article.content }}</span>
+                        <a href="javascript:openNewWin('{{ article.url }}', 'content')">查看</a>
+{#                        <span id="content">{{ article.content }}</span>#}
 {#                        <a href="" id="btn"></a>#}
 {#                        <script type="text/javascript">#}
 {#                            var btn=document.getElementById('btn');#}
@@ -88,6 +105,7 @@
         <input name="id" style="display: none" value="{{ article.id }}"/>
         <input name="title" style="display: none" value="{{ article.title }}"/>
         <input name="subject" style="display: none" value="{{ article.subject }}"/>
+        <input name="source" style="display: none" value="{{ article.user }}"/>
         <input type="submit" style="width: 100px;height: 30px;font-size: larger" name="submit" onclick='return check(this.form, "submit")' value="submit"/>
         <input type="submit" style="width: 100px;height: 30px;font-size: larger" name="submit" onclick='return check(this.form, "next")' value="next"/>
     </form>

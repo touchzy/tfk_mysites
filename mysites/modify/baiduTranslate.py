@@ -7,6 +7,7 @@ Created on Tue Jul 10 09:26:35 2018
 import hashlib
 import requests
 import json
+import difflib
 
 class BaiduTranslate(object):
     '''百度api调用格式：http://api.fanyi.baidu.com/api/trans/vip/translate?q=apple&from=en&to=zh&appid=2015063000000001&salt=1435660288&sign=f89f9594663708c1605f3d736d01d2d4'''
@@ -49,3 +50,8 @@ class BaiduTranslate(object):
         html_text = self.getHTMLText(self.full_url)
         result = self.get_json_data(html_text)
         return result
+
+
+if __name__ == '__main__':
+    # print(BaiduTranslate('你的“盐”值爆表了吗？教你“限盐妙招” TITLE CONTENT 秋风起，冬天也渐渐走近，高血压患者也开始担忧血压不稳、心血管病发作。 国际著名期刊“柳叶刀”今年发布研究显示，在中国，饮食结构造成的心血管疾病死亡率在世界人口前20的大国中“喜登“第一，而在所有的饮食风险因素中，影响最大的就是高盐。2018140653。同德医检通。2018140653。你的“盐”值爆表了吗？ 教你“限盐妙招”').translate())
+    print(difflib.SequenceMatcher(None, "高血压的罪魁祸首不是盐！而是它，该忌口了！", "【医生说】心血管疾病的预防需要注意这些事项！").quick_ratio())

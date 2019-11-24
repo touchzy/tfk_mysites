@@ -83,9 +83,9 @@ DATABASES = {
 }
 
 import mongoengine
-# mongoengine.connect("test")
+mongoengine.connect("test")
 # mongoengine.connect("test", host="10.210.2.101", port=27017, username="zy", password="zyzyzy")
-mongoengine.connect("tfk_project", host="114.242.177.193", port=27017, username="spider_user", password="mongdb_for_tfk@yuquan")
+# mongoengine.connect("tfk_project", host="114.242.177.193", port=27017, username="spider_user", password="mongdb_for_tfk@yuquan")
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'  # 缓存
 

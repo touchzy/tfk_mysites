@@ -1,13 +1,16 @@
 ﻿# -*- coding: utf-8 -*-
 import os
+import re
 import datetime
 import time
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
-from email.utils import parseaddr,formataddr
+from email.utils import parseaddr, formataddr
 import traceback
+import difflib
+
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -20,7 +23,7 @@ from .getReport import dailyreport
 from bson.objectid import ObjectId
 from pytz import timezone
 
-fat_keywords = ["反式脂肪酸", "氢化植物油","部分氢化植物油", "氢化脂肪", "部分氢化脂肪", "植物性酥油", "起酥油", "人造牛油", "人造黄油", "人造奶油", "植脂末", "人造脂肪酸"]
+fat_keywords = ["反式脂肪酸", "氢化植物油", "部分氢化植物油", "氢化脂肪", "部分氢化脂肪", "植物性酥油", "起酥油", "人造牛油", "人造黄油", "人造奶油", "植脂末", "人造脂肪酸"]
 
 
 def get_date(date, custom_date):
@@ -86,7 +89,7 @@ def index(request):
 
 
 def is_repeat(title_a, title_b):
-    if (title_a in title_b) or (title_b in title_a):
+    if difflib.SequenceMatcher(None, title_a, title_b).quick_ratio() > 0.7:
         return True
     else:
         return False
@@ -110,6 +113,102 @@ def get_repeat_num(query_set):
         Wechat_articles.objects(_id=wechat_dict[key]["id"]).update(repeat_num=wechat_dict[key]["count"])
 
 
+# 修改之前的微信筛选
+# @check_login
+# def get_wechat(request):
+#     if request.method == "POST":
+#         date = request.POST.get("date")
+#         id = request.POST.get("id")
+#         subject = request.POST.get("subject")
+#         submit_type = request.POST.get("submit")
+#         if submit_type == "submit":
+#             title = request.POST.get("title")
+#             abstr = request.POST.get("abstr")
+#             translate_string = abstr.replace("#", "").replace("&", "") + '2018140653。' + title.replace("#", "").replace("&", "")
+#             translate_list = BaiduTranslate(translate_string).translate().split('2018140653。')
+#             try:
+#                 abstr_en = translate_list[0]
+#                 title_en = translate_list[1]
+#             except:
+#                 title_en = BaiduTranslate(title.replace("#", "").replace("&", "")).translate()
+#                 abstr_en = BaiduTranslate(abstr.replace("#", "").replace("&", "")).translate()
+#             Wechat_articles.objects(_id=id).update(is_useful=True, to_filter=False, to_check=True, abstract_cn=abstr, abstract_en=abstr_en, title_en=title_en)
+#         else:
+#             Wechat_articles.objects(_id=id).update(is_useful=False, to_filter=False, to_check=False)
+#         if Wechat_articles.objects(post_date=date, subject=subject, status="normal", is_useful=True, to_filter=False, to_check=True).count() < 5:
+#             wechat_article = Wechat_articles.objects(post_date=date, subject=subject, status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+#             if wechat_article:
+#                 article = wechat_article[0]
+#                 article.id = article._id
+#                 return render(request, "wechat_articles.html", {"article": article, "date": date})
+#             else:
+#                 if subject == "1":
+#                     wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+#                     if wechat_article:
+#                         article = wechat_article[0]
+#                         article.id = article._id
+#                         return render(request, "wechat_articles.html", {"article": article, "date": date})
+#                     else:
+#                         message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
+#                         return render(request, "message.html", {"message": message})
+#                 else:
+#                     message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
+#                     return render(request, "message.html", {"message": message})
+#         else:
+#             if subject == "1":
+#                 wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+#                 if wechat_article:
+#                     article = wechat_article[0]
+#                     article.id = article._id
+#                     return render(request, "wechat_articles.html", {"article": article, "date": date})
+#                 else:
+#                     message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
+#                     return render(request, "message.html", {"message": message})
+#             else:
+#                 message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
+#                 return render(request, "message.html", {"message": message})
+#     else:
+#         date = get_date(request.GET.get("date"), request.GET.get("custom_date"))
+#         if Wechat_articles.objects(post_date=date, is_useful=True).count() == 10:
+#             message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
+#             return render(request, "message.html", {"message": message})
+#         else:
+#             if Wechat_articles.objects(post_date=date):
+#                 get_repeat_num(Wechat_articles.objects(post_date=date, subject="1", status="normal"))
+#                 get_repeat_num(Wechat_articles.objects(post_date=date, subject="2", status="normal"))
+#             else:
+#                 message = date_format(date) + '微信无数据！请返回首页重新输入日期'
+#                 return render(request, "message.html", {"message": message})
+#             if Wechat_articles.objects(post_date=date, subject="1", status="normal", is_useful=True).count() < 5:
+#                 wechat_article = Wechat_articles.objects(post_date=date, subject="1", status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+#                 if wechat_article:
+#                     article = wechat_article[0]
+#                     article.id = article._id
+#                     return render(request, "wechat_articles.html", {"article": article, "date": date})
+#                 else:
+#                     if Wechat_articles.objects(post_date=date, subject="2", status="normal", is_useful=True).count() < 5:
+#                         wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+#                         if wechat_article:
+#                             article = wechat_article[0]
+#                             article.id = article._id
+#                             return render(request, "wechat_articles.html", {"article": article, "date": date})
+#                         else:
+#                             message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
+#                             return render(request, "message.html", {"message": message})
+#                     else:
+#                         message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
+#                         return render(request, "message.html", {"message": message})
+#             else:
+#                 wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+#                 if wechat_article:
+#                     article = wechat_article[0]
+#                     article.id = article._id
+#                     return render(request, "wechat_articles.html", {"article": article, "date": date})
+#                 else:
+#                     message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
+#                     return render(request, "message.html", {"message": message})
+
+
 @check_login
 def get_wechat(request):
     if request.method == "POST":
@@ -120,29 +219,40 @@ def get_wechat(request):
         if submit_type == "submit":
             title = request.POST.get("title")
             abstr = request.POST.get("abstr")
-            translate_string = abstr.replace("#", "").replace("&", "") + '2018140653。' + title.replace("#", "").replace("&", "")
-            translate_list = BaiduTranslate(translate_string).translate().split('2018140653.')
+            # url = request.POST.get('url')
+            # read_num = request.POST.get('read_num')
+            source = request.POST.get("source")
+            translate_string = abstr.replace("#", "").replace("&", "") + '2018140653。' + source.replace("#", "").replace("&", "") + '。' + '2018140653。' + title.replace("#", "").replace("&", "")
+            translate_list = re.split(r'2018140653。|2018140653.', BaiduTranslate(translate_string).translate())
             try:
                 abstr_en = translate_list[0]
-                title_en = translate_list[1]
+                source_en = translate_list[1].replace('.', '')
+                title_en = translate_list[2]
             except:
-                title_en = BaiduTranslate(title.replace("#", "").replace("&", "")).translate()
+                title_en = 'False'
                 abstr_en = BaiduTranslate(abstr.replace("#", "").replace("&", "")).translate()
-            Wechat_articles.objects(_id=id).update(is_useful=True, to_filter=False, to_check=True, abstract_cn=abstr, abstract_en=abstr_en, title_en=title_en)
+                source_en = 'False'
+            Wechat_articles.objects(_id=id).update(is_useful=True, to_filter=False, to_check=True, abstract_cn=abstr, abstract_en=abstr_en, title_en=title_en, source_en=source_en)
         else:
             Wechat_articles.objects(_id=id).update(is_useful=False, to_filter=False, to_check=False)
-        if Wechat_articles.objects(post_date=date, subject=subject, status="normal", is_useful=True, to_filter=False, to_check=True).count() < 5:
-            wechat_article = Wechat_articles.objects(post_date=date, subject=subject, status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+        if Wechat_articles.objects(post_date=date, subject=subject, status="normal", is_useful=True, to_filter=False).count() < 5:
+            wechat_article = Wechat_articles.objects(post_date=date, subject=subject, status="normal", to_filter=True, repeat_num__ne=None, user__in=['健康中国', '世界卫生组织', '全民健康生活方式行动']).order_by("-read_num").limit(1)
+            if not wechat_article:
+                wechat_article = Wechat_articles.objects(post_date=date, subject=subject, status="normal", to_filter=True, repeat_num__ne=None).order_by("-read_num").limit(1)
             if wechat_article:
                 article = wechat_article[0]
                 article.id = article._id
+                article.keyword = ', '.join(article.keyword)
                 return render(request, "wechat_articles.html", {"article": article, "date": date})
             else:
-                if subject == "1":
-                    wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+                if subject == "1" and Wechat_articles.objects(post_date=date, subject="2", status="normal", is_useful=True, to_filter=False).count() < 5:
+                    wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True, repeat_num__ne=None, user__in=['健康中国', '世界卫生组织', '全民健康生活方式行动']).order_by("-read_num").limit(1)
+                    if not wechat_article:
+                        wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True, repeat_num__ne=None).order_by("-read_num").limit(1)
                     if wechat_article:
                         article = wechat_article[0]
                         article.id = article._id
+                        article.keyword = ', '.join(article.keyword)
                         return render(request, "wechat_articles.html", {"article": article, "date": date})
                     else:
                         message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
@@ -151,11 +261,14 @@ def get_wechat(request):
                     message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
                     return render(request, "message.html", {"message": message})
         else:
-            if subject == "1":
-                wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+            if subject == "1" and Wechat_articles.objects(post_date=date, subject="2", status="normal", is_useful=True, to_filter=False).count() < 5:
+                wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True, repeat_num__ne=None, user__in=['健康中国', '世界卫生组织', '全民健康生活方式行动']).order_by("-read_num").limit(1)
+                if not wechat_article:
+                    wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True, repeat_num__ne=None).order_by("-read_num").limit(1)
                 if wechat_article:
                     article = wechat_article[0]
                     article.id = article._id
+                    article.keyword = ', '.join(article.keyword)
                     return render(request, "wechat_articles.html", {"article": article, "date": date})
                 else:
                     message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
@@ -165,28 +278,34 @@ def get_wechat(request):
                 return render(request, "message.html", {"message": message})
     else:
         date = get_date(request.GET.get("date"), request.GET.get("custom_date"))
-        if Wechat_articles.objects(post_date=date, is_useful=True).count() == 10:
+        if Wechat_articles.objects(post_date=date, is_useful=True).count() >= 10:
             message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
             return render(request, "message.html", {"message": message})
         else:
             if Wechat_articles.objects(post_date=date):
-                get_repeat_num(Wechat_articles.objects(post_date=date, subject="1", status="normal"))
-                get_repeat_num(Wechat_articles.objects(post_date=date, subject="2", status="normal"))
+                get_repeat_num(Wechat_articles.objects(post_date=date, subject="1", status="normal").order_by("-read_num"))
+                get_repeat_num(Wechat_articles.objects(post_date=date, subject="2", status="normal").order_by("-read_num"))
             else:
                 message = date_format(date) + '微信无数据！请返回首页重新输入日期'
                 return render(request, "message.html", {"message": message})
             if Wechat_articles.objects(post_date=date, subject="1", status="normal", is_useful=True).count() < 5:
-                wechat_article = Wechat_articles.objects(post_date=date, subject="1", status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+                wechat_article = Wechat_articles.objects(post_date=date, subject="1", status="normal", to_filter=True, repeat_num__ne=None, user__in=['健康中国', '世界卫生组织', '全民健康生活方式行动']).order_by("-read_num").limit(1)
+                if not wechat_article:
+                    wechat_article = Wechat_articles.objects(post_date=date, subject="1", status="normal", to_filter=True, repeat_num__ne=None).order_by("-read_num").limit(1)
                 if wechat_article:
                     article = wechat_article[0]
                     article.id = article._id
+                    article.keyword = ', '.join(article.keyword)
                     return render(request, "wechat_articles.html", {"article": article, "date": date})
                 else:
                     if Wechat_articles.objects(post_date=date, subject="2", status="normal", is_useful=True).count() < 5:
-                        wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+                        wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True, repeat_num__ne=None, user__in=['健康中国', '世界卫生组织', '全民健康生活方式行动']).order_by("-read_num").limit(1)
+                        if not wechat_article:
+                            wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True, repeat_num__ne=None).order_by("-read_num").limit(1)
                         if wechat_article:
                             article = wechat_article[0]
                             article.id = article._id
+                            article.keyword = ', '.join(article.keyword)
                             return render(request, "wechat_articles.html", {"article": article, "date": date})
                         else:
                             message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
@@ -195,10 +314,13 @@ def get_wechat(request):
                         message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
                         return render(request, "message.html", {"message": message})
             else:
-                wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True).order_by("-repeat_num").limit(1)
+                wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True, repeat_num__ne=None, user__in=['健康中国', '世界卫生组织', '全民健康生活方式行动']).order_by("-read_num").limit(1)
+                if not wechat_article:
+                    wechat_article = Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True, repeat_num__ne=None).order_by("-read_num").limit(1)
                 if wechat_article:
                     article = wechat_article[0]
                     article.id = article._id
+                    article.keyword = ', '.join(article.keyword)
                     return render(request, "wechat_articles.html", {"article": article, "date": date})
                 else:
                     message = date_format(date) + '微信筛选完成！请返回首页继续进行核对工作'
@@ -339,15 +461,15 @@ def get_news(request):
             title = request.POST.get("title")
             source = request.POST.get("source")
             translate_string = abstr.replace("#", "").replace("&", "") + '2018140653。' + source.replace("#", "").replace("&", "") + '。' + '2018140653。' + title.replace("#", "").replace("&", "")
-            translate_list = BaiduTranslate(translate_string).translate().split('2018140653.')
+            translate_list = re.split(r'2018140653。|2018140653.', BaiduTranslate(translate_string).translate())
             try:
                 abstr_en = translate_list[0]
                 source_en = translate_list[1].replace('.', '')
                 title_en = translate_list[2]
             except:
                 abstr_en = BaiduTranslate(abstr.replace("#", "").replace("&", "")).translate()
-                title_en = BaiduTranslate(title.replace("#", "").replace("&", "")).translate()
-                source_en = BaiduTranslate(source.replace("#", "").replace("&", "")).translate()
+                title_en = 'False'
+                source_en = 'False'
             try:
                 new = News_articles.objects(_id=ObjectId(id))
                 if new:
@@ -403,7 +525,13 @@ def check(request):
         if type == "wechat":
             title_en = request.POST.get("title_en")
             abstract_en = request.POST.get("abstr_en")
-            Wechat_articles.objects(_id=id).update(to_check=False, title_en=title_en, abstract_en=abstract_en)
+            source_en = request.POST.get("source_en")
+            tem_article = Wechat_articles.objects.get(_id=id)
+            tem_article.title_en = title_en if title_en else tem_article.title_en
+            tem_article.abstract_en = abstract_en if abstract_en else tem_article.abstract_en
+            tem_article.source_en = source_en if source_en else tem_article.source_en
+            tem_article.to_check = False
+            tem_article.save()
             wechat_article = Wechat_articles.objects(post_date=date, to_check=True).limit(1)
             if wechat_article:
                 article = wechat_article[0]
@@ -414,7 +542,10 @@ def check(request):
                 return render(request, "message.html", {"message": message})
         elif type == "weibo":
             content_en = request.POST.get("content_en")
-            Weibo_content.objects(_id=id).update(to_check=False, content_en=content_en)
+            tem_article = Weibo_content.objects.get(_id=id)
+            tem_article.content_en = content_en if content_en else tem_article.content_en
+            tem_article.to_check = False
+            tem_article.save()
             weibo_article = Weibo_content.objects(date=date, to_check=True).limit(1)
             if weibo_article:
                 article = weibo_article[0]
@@ -427,14 +558,20 @@ def check(request):
             title_en = request.POST.get("title_en")
             abstract_en = request.POST.get("abstr_en")
             source_en = request.POST.get("source_en")
-            try:
-                new = News_articles.objects(_id=ObjectId(id))
-                if new:
-                    new.update(to_check=False, title_en=title_en, abstract_en=abstract_en, source_en=source_en)
-                else:
-                    News_articles.objects(_id=id).update(to_check=False, title_en=title_en, abstract_en=abstract_en, source_en=source_en)
-            except:
-                News_articles.objects(_id=id).update(to_check=False, title_en=title_en, abstract_en=abstract_en, source_en=source_en)
+            # try:
+            #     new = News_articles.objects(_id=ObjectId(id))
+            #     if new:
+            #         new.update(to_check=False, title_en=title_en, abstract_en=abstract_en, source_en=source_en)
+            #     else:
+            #         News_articles.objects(_id=id).update(to_check=False, title_en=title_en, abstract_en=abstract_en, source_en=source_en)
+            # except:
+            #     News_articles.objects(_id=id).update(to_check=False, title_en=title_en, abstract_en=abstract_en, source_en=source_en)
+            tem_article = News_articles.objects.get(_id=ObjectId(id))
+            tem_article.title_en = title_en if title_en else tem_article.title_en
+            tem_article.abstract_en = abstract_en if abstract_en else tem_article.abstract_en
+            tem_article.source_en = source_en if source_en else tem_article.source_en
+            tem_article.to_check = False
+            tem_article.save()
             news_article = News_articles.objects(time__contains=date, to_check=True).limit(1)
             if news_article:
                 article = news_article[0]
@@ -469,7 +606,7 @@ def check(request):
                 return render(request, "weibo_check.html", {"article": article, "date": date})
             else:
                 if Weibo_content.objects(date=date):
-                    if Weibo_content.objects(date=date, is_ori=1, repost__gte=50, to_filter=True, is_related=True) or not Weibo_content.objects(date=date, to_filter=True, is_related__in=[True,False]):
+                    if Weibo_content.objects(date=date, is_ori=1, repost__gte=50, to_filter=True, is_related=True) or not Weibo_content.objects(date=date, to_filter=True, is_related__in=[True, False]):
                         message = date_format(date) + '微博数据未筛选完毕！请等待筛选完毕'
                     else:
                         message = date + '微博数据核对完成！请返回首页生成日报'
@@ -549,8 +686,8 @@ def get_html(request):
                 message = date_format(date) + '微信仍有工作未完成，无法生成日报。'
                 return render(request, "message.html", {"message": message})
             else:
-                wechat_articles_salt = Wechat_articles.objects(post_date=date, is_useful=True, subject="1").order_by("-repeat_num")
-                wechat_articles_fat = Wechat_articles.objects(post_date=date, is_useful=True, subject="2").order_by("-repeat_num")
+                wechat_articles_salt = Wechat_articles.objects(post_date=date, is_useful=True, subject="1").order_by("-read_num")
+                wechat_articles_fat = Wechat_articles.objects(post_date=date, is_useful=True, subject="2").order_by("-read_num")
                 count_dict = get_counts(date, type)
                 daily_count = Daily_count.objects(_id=date)
                 if daily_count:
@@ -736,7 +873,7 @@ def get_string(date):
     if daily_count_today and daily_count_yesterday:
         count_today = daily_count_today[0]
         count_yesterday = daily_count_yesterday[0]
-        if count_today.news_salt_count and (count_today.wechat_salt_count or count_today.wechat_salt_count == 0) and count_today.weibo_salt_count:
+        if (count_today.news_salt_count or count_today.news_salt_count == 0) and (count_today.wechat_salt_count or count_today.wechat_salt_count == 0) and (count_today.weibo_salt_count or count_today.weibo_salt_count == 0):
             salt_string = '与“减盐”相关的数据：共监测到%d篇新闻%s，其中属于重点监测省份的有%d篇；获取到%d篇微信公众号文章%s；获取到%d条微博%s，其中转发量超过50的有%d条；\r\n' % (count_today.news_salt_count, get_compare(count_today.news_salt_count - count_yesterday.news_salt_count), count_today.important_salt, count_today.wechat_salt_count, get_compare(count_today.wechat_salt_count - count_yesterday.wechat_salt_count), count_today.weibo_salt_count, get_compare(count_today.weibo_salt_count - count_yesterday.weibo_salt_count), count_today.hot_salt)
             fat_string = '与“反式脂肪酸”相关的数据：共监测到%d篇新闻%s，其中属于重点监测省份的有%d篇；获取到%d篇微信公众号文章%s；获取到%d条微博%s，其中转发量超过50的有%d条。' % (count_today.news_fat_count, get_compare(count_today.news_fat_count - count_yesterday.news_fat_count), count_today.important_fat, count_today.wechat_fat_count, get_compare(count_today.wechat_fat_count - count_yesterday.wechat_fat_count), count_today.weibo_fat_count, get_compare(count_today.weibo_fat_count - count_yesterday.weibo_fat_count), count_today.hot_fat)
             return salt_string + fat_string
@@ -750,8 +887,18 @@ def get_string(date):
 def show_string(request):
     date = request.POST.get("date")
     string = get_string(date)
+    daily_report = Daily_report.objects(_id=date)
+    wc, wb, ne = 0, 0, 0
+    if daily_report:
+        report = daily_report[0]
+        if report.fat_wechat_report and report.salt_wechat_report:
+            wc = 1
+        if report.fat_weibo_report and report.salt_weibo_report:
+            wb = 1
+        if report.fat_news_report and report.salt_news_report:
+            ne = 1
     if string != "":
-        return render(request, "index.html", {"string": string})
+        return render(request, "index.html", {"string": string, 'wc': wc, 'wb': wb, 'ne': ne})
     else:
         return render(request, "message.html", {"message": date_format(date) + "工作未完成，无法统计数据"})
 

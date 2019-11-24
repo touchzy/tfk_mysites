@@ -1,5 +1,42 @@
 from mongoengine import *
 
+
+# class Wechat_articles(Document):
+#     _id = StringField(required=True)
+#     id = StringField()
+#     content = StringField()
+#     title = StringField()
+#     post_date = StringField()
+#     user = StringField()
+#     keyword = ListField()
+#     txt_info = ListField()
+#     txt_info_en = ListField()
+#     subject = StringField()
+#     province = StringField()
+#     status = StringField()
+#     abstract_cn = StringField()
+#     abstract_en = StringField()
+#     page = IntField()
+#     is_useful = BooleanField()
+#     repeat_num = IntField()
+#     show_in_report = BooleanField()
+#     original_user = StringField()
+#     share_notice =StringField()
+#     abstract = StringField()
+#     show_index = IntField()
+#     to_check_translate = BooleanField()
+#     to_translate = BooleanField()
+#     content_en_machine = StringField()
+#     title_en_machine = StringField()
+#     title_en = StringField()
+#     to_filter = BooleanField()
+#     to_check = BooleanField()
+#     url = StringField()
+#     source_en = StringField()
+#     read_num = IntField()
+#     dSource = IntField()
+
+
 class Wechat_articles(Document):
     _id = StringField(required=True)
     id = StringField()
@@ -8,8 +45,10 @@ class Wechat_articles(Document):
     post_date = StringField()
     user = StringField()
     keyword = ListField()
-    txt_info = StringField()
-    txt_info_en = StringField()
+    txt_info = ListField()
+    txt_info_en = ListField()
+    text_info = StringField()
+    text_info_en = StringField()
     subject = StringField()
     province = StringField()
     status = StringField()
@@ -30,6 +69,23 @@ class Wechat_articles(Document):
     title_en = StringField()
     to_filter = BooleanField()
     to_check = BooleanField()
+    url = StringField()
+    source_en = StringField()
+    read_num = IntField()
+    dSource = StringField()
+    newrank_id = StringField()
+    newrank_userid = StringField()
+    tuwen = StringField()
+    leixing = StringField()
+    post_datetime = StringField()
+    post_time = StringField()
+    tag = ListField()
+    like_num = IntField()
+    have_content = BooleanField()
+    insert_time = StringField()
+    update_time = StringField()
+    meta = {'collection': 'wechat_articles_new'}
+
 
 class Weibo_content(Document):
     _id = StringField(required=True)
@@ -100,8 +156,9 @@ class Weibo_content(Document):
     to_filter = BooleanField()
     to_check = BooleanField()
 
+
 class News_articles(Document):
-    _id = StringField(required=True)
+    _id = ObjectIdField(required=True)
     id = StringField()
     crawl_time = StringField()
     source = StringField()
@@ -123,6 +180,7 @@ class News_articles(Document):
     attitude = StringField()
     province = StringField()
 
+
 class Daily_report(Document):
     _id = StringField(required=True)
     fat_news_report = StringField()
@@ -132,6 +190,7 @@ class Daily_report(Document):
     fat_wechat_report = StringField()
     salt_wechat_report = StringField()
 
+
 class Weibo_notes(Document):
     _id = StringField(required=True)
     salt_male = IntField()
@@ -139,10 +198,12 @@ class Weibo_notes(Document):
     fat_male = IntField()
     fat_female = IntField()
 
+
 class User_account(Document):
     _id = StringField(required=True)
     name = StringField()
     password = StringField()
+
 
 class Daily_count(Document):
     _id = StringField(required=True)
