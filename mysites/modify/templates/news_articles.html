@@ -19,7 +19,7 @@
                 if(type == "next") {
                     return true;
                 }else {
-                    if (form.news_subject.value != "" && form.content_type.value != "" && form.attitude.value != "" && form.province.value != "" && form.abstr.value != "") {
+                    if (form.news_subject.value != "" && form.content_type.value != "" && form.attitude.value != "" && form.province.value != "" && form.abstr.value != "" && form.origin.value != "") {
                         return true;
                     }else{
                         alert("请填写所有信息再提交！")
@@ -29,6 +29,10 @@
             }else{
                 return false;
             }
+        }
+
+        function openNewWin(url, title) {
+            window.open(url, title, "status=no,height=900,width=1000,left=300");
         }
     </script>
 </head>
@@ -76,6 +80,17 @@
                                 return false;
                             }
                         </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="40px">链接:</td>
+                    <td><a href="javascript:openNewWin('{{ article.url }}', 'content')">查看</a></td>
+                </tr>
+                <tr>
+                    <td height="40px">是否原创:</td>
+                    <td>
+                        <label><input name="origin" type="radio" value="1" />是</label>
+                        <label><input name="origin" type="radio" value="0" />否</label>
                     </td>
                 </tr>
                 <tr>

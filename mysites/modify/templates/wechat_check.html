@@ -92,7 +92,18 @@
                 </tr>
                 <tr>
                     <td style="font-size: 18px;font-weight: bolder;">输入翻译</td>
-                    <td><textarea rows="2" style="width:100%;font-size: 18px" name="source_en"></textarea></td>
+                    <td>
+                        <textarea rows="2" style="width:100%;font-size: 18px" name="source_en" id="source_en"></textarea>
+                        <script type="text/javascript">
+                            var textarea = document.getElementById("source_en");
+                            if("{{ need_check }}" == 0) {
+                                textarea.readOnly = true;
+                                textarea.placeholder = 'Translation checked!';
+                            }else{
+                                textarea.readOnly = false;
+                            }
+                        </script>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2"><br/><hr class="style-hr"/><br/></td>

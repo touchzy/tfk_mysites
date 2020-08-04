@@ -14,7 +14,7 @@ import difflib
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Wechat_articles, Weibo_content, News_articles, Daily_report, Weibo_notes, User_account, Daily_count
+from .models import Wechat_articles, Weibo_content, News_articles, Daily_report, Weibo_notes, User_account, Daily_count, Wx_user
 from .baiduTranslate import BaiduTranslate
 from .getNewsHtml import get_html_content
 from .getWeiboHtml import weibo_dailyreport
@@ -232,6 +232,9 @@ def get_wechat(request):
                 title_en = 'False'
                 abstr_en = BaiduTranslate(abstr.replace("#", "").replace("&", "")).translate()
                 source_en = 'False'
+            wx_user = Wx_user.objects(source=source)
+            if wx_user:
+                source_en = wx_user[0].source_en
             Wechat_articles.objects(_id=id).update(is_useful=True, to_filter=False, to_check=True, abstract_cn=abstr, abstract_en=abstr_en, title_en=title_en, source_en=source_en)
         else:
             Wechat_articles.objects(_id=id).update(is_useful=False, to_filter=False, to_check=False)
@@ -446,6 +449,13 @@ def get_weibo(request):
                 return render(request, "message.html", {"message": message})
 
 
+def get_boolean(origin):
+    if origin == '1':
+        return True
+    else:
+        return False
+
+
 @check_login
 def get_news(request):
     if request.method == "POST":
@@ -460,6 +470,7 @@ def get_news(request):
             abstr = request.POST.get("abstr")
             title = request.POST.get("title")
             source = request.POST.get("source")
+            origin = get_boolean(request.POST.get("origin"))
             translate_string = abstr.replace("#", "").replace("&", "") + '2018140653。' + source.replace("#", "").replace("&", "") + '。' + '2018140653。' + title.replace("#", "").replace("&", "")
             translate_list = re.split(r'2018140653。|2018140653.', BaiduTranslate(translate_string).translate())
             try:
@@ -474,13 +485,13 @@ def get_news(request):
                 new = News_articles.objects(_id=ObjectId(id))
                 if new:
                     new.update(is_useful=True, to_filter=False, to_check=True, news_subject=news_subject,
-                               content_type=content_type, attitude=attitude, province=province, abstract_cn=abstr, abstract_en=abstr_en, title_en=title_en, source_en=source_en)
+                               content_type=content_type, attitude=attitude, province=province, abstract_cn=abstr, abstract_en=abstr_en, title_en=title_en, source_en=source_en, is_origin=origin)
                 else:
                     News_articles.objects(_id=id).update(is_useful=True, to_filter=False, to_check=True, news_subject=news_subject,
-                                                         content_type=content_type, attitude=attitude, province=province, abstract_cn=abstr, abstract_en=abstr_en, title_en=title_en, source_en=source_en)
+                                                         content_type=content_type, attitude=attitude, province=province, abstract_cn=abstr, abstract_en=abstr_en, title_en=title_en, source_en=source_en, is_origin=origin)
             except:
                 News_articles.objects(_id=id).update(is_useful=True, to_filter=False, to_check=True, news_subject=news_subject,
-                                                     content_type=content_type, attitude=attitude, province=province, abstract_cn=abstr, abstract_en=abstr_en, title_en=title_en, source_en=source_en)
+                                                     content_type=content_type, attitude=attitude, province=province, abstract_cn=abstr, abstract_en=abstr_en, title_en=title_en, source_en=source_en, is_origin=origin)
         else:
             try:
                 new = News_articles.objects(_id=ObjectId(id))
@@ -532,11 +543,17 @@ def check(request):
             tem_article.source_en = source_en if source_en else tem_article.source_en
             tem_article.to_check = False
             tem_article.save()
+            if not Wx_user.objects(source=tem_article.user):
+                wx_user = Wx_user(source=tem_article.user, source_en=tem_article.source_en)
+                wx_user.save()
             wechat_article = Wechat_articles.objects(post_date=date, to_check=True).limit(1)
             if wechat_article:
                 article = wechat_article[0]
                 article.id = article._id
-                return render(request, "wechat_check.html", {"article": article, "date": date})
+                need_check = 1
+                if Wx_user.objects(source=article.user):
+                    need_check = 0
+                return render(request, "wechat_check.html", {"article": article, "date": date, "need_check": need_check})
             else:
                 message = date_format(date) + '微信核对完成！请返回首页生成日报'
                 return render(request, "message.html", {"message": message})
@@ -588,7 +605,10 @@ def check(request):
             if wechat_article:
                 article = wechat_article[0]
                 article.id = article._id
-                return render(request, "wechat_check.html", {"article": article, "date": date})
+                need_check = 1
+                if Wx_user.objects(source=article.user):
+                    need_check = 0
+                return render(request, "wechat_check.html", {"article": article, "date": date, "need_check": need_check})
             else:
                 if Wechat_articles.objects(post_date=date):
                     if (Wechat_articles.objects(post_date=date, subject="1", status="normal", is_useful=True).count() < 5 and Wechat_articles.objects(post_date=date, subject="1", status="normal", to_filter=True, repeat_num__ne=None)) or (Wechat_articles.objects(post_date=date, subject="2", status="normal", is_useful=True).count() < 5 and Wechat_articles.objects(post_date=date, subject="2", status="normal", to_filter=True, repeat_num__ne=None)) or not Wechat_articles.objects(post_date=date, status="normal", repeat_num__ne=None):
@@ -885,9 +905,10 @@ def get_string(date):
 
 @check_login
 def show_string(request):
-    date = request.POST.get("date")
+    today = request.POST.get("date")
+    date = get_date(today, request.POST.get("custom_date"))
     string = get_string(date)
-    daily_report = Daily_report.objects(_id=date)
+    daily_report = Daily_report.objects(_id=today)
     wc, wb, ne = 0, 0, 0
     if daily_report:
         report = daily_report[0]
@@ -898,7 +919,7 @@ def show_string(request):
         if report.fat_news_report and report.salt_news_report:
             ne = 1
     if string != "":
-        return render(request, "index.html", {"string": string, 'wc': wc, 'wb': wb, 'ne': ne})
+        return render(request, "index.html", {"string": string, 'wc': wc, 'wb': wb, 'ne': ne, 'string_date': '  ' + date})
     else:
         return render(request, "message.html", {"message": date_format(date) + "工作未完成，无法统计数据"})
 

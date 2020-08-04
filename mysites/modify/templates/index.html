@@ -66,6 +66,8 @@
         }
         function string() {
             document.getElementById("hh").style.display="block";
+            var custom_date = document.getElementById("custom").value;
+            document.getElementById("email_custom_date").value=custom_date;
             document.send_mail.action="string";
             document.send_mail.submit();
         }
@@ -222,11 +224,12 @@
     <form action="" method="post" name="send_mail" enctype="multipart/form-data">
         {% csrf_token %}
         <input name="date" id="email_date" style="display: none"/>
+        <input name="custom_date" id="email_custom_date" style="display: none"/>
         <script>
             var date = document.getElementById("get_date").value;
             document.getElementById("email_date").value=date;
         </script>
-        <p style="font-size: 18px;font-weight: bolder">邮件内容：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="font-size: 15px" href="#" onclick="string()" >获取内容</a></p>
+        <p style="font-size: 18px;font-weight: bolder">邮件内容{{ string_date }}：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a style="font-size: 15px" href="#" onclick="string()" >获取内容</a></p>
         <textarea id="show_string" rows="6" style="width: 500px; display: none" name="mail_content">{{ string }}</textarea>
         <br/>
         <a id="send_email" href="#" onclick="send()" style="display: none">发送邮件</a>

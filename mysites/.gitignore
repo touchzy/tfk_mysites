@@ -1,5 +1,5 @@
 .idea
 /venv
-/mysites/.idea
+mysites/.idea
 ../
-/modify/__pycache__
+modify/__pycache__

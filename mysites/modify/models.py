@@ -179,6 +179,7 @@ class News_articles(Document):
     news_subject = StringField()
     attitude = StringField()
     province = StringField()
+    is_origin = BooleanField()
 
 
 class Daily_report(Document):
@@ -217,3 +218,8 @@ class Daily_count(Document):
     weibo_fat_count = IntField()
     hot_salt = IntField()
     hot_fat = IntField()
+
+
+class Wx_user(Document):
+    source = StringField()
+    source_en = StringField()
